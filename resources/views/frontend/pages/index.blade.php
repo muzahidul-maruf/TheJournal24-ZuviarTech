@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
 @section('home_menu_active', 'active')
 @section('page_title')
-    Home
+
 @endsection
 
 @section('custom_css')
@@ -13,90 +13,23 @@
 
 @section('content')
 
-    <section class="featured-posts">
+    <section class="featured-posts" style="background-color: #FFECDA">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-md-6 col-xs-12 col-lg-4">
-                    <div class="featured-slider mr-md-3 mr-lg-3">
-                        <div class="item" style="background-image:url(images/news/img-1.jpg)">
-                            <div class="post-content">
-                                <a href="#" class="post-cat bg-primary">Entertainment</a>
-                                <h2 class="slider-post-title">
-                                    <a href="single-post.html">Here's How To Get Free Pizza On</a>
-                                </h2>
-                                <div class="post-meta mt-2">
-                                    <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours
-                                        ago</span>
-                                    <span class="post-author">
-                                        by
-                                        <a href="author.html">Rodinho Summon</a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xs-12 col-lg-4">
-                    <div class="featured-slider mr-lg-3">
-                        <div class="item" style="background-image:url(images/news/img-2.jpg)">
-                            <div class="post-content">
-                                <a href="#" class="post-cat bg-danger">game</a>
-                                <h2 class="slider-post-title">
-                                    <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                                </h2>
-                                <div class="post-meta mt-2">
-                                    <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours
-                                        ago</span>
-                                    <span class="post-author">
-                                        <span> by </span>
-                                        <a href="author.html">Rodinho Summon</a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-12 col-xs-12 col-lg-6" style="text-align:center;">
+                    <img src="{{ asset('necessary_assets/pics/hero/1.png') }}" alt="" class="img-fluid">
                 </div>
 
 
-                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-4">
-                    <div class="row mt-3 mt-lg-0">
-                        <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
-                            <div class="post-featured-style" style="background-image:url(images/news/news-02.jpg)">
-                                <div class="post-content">
-                                    <a href="#" class="post-cat bg-success">lifestyle</a>
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">Healthy diet to keep you healthy and strong</a>
-                                    </h2>
-                                    <div class="post-meta mt-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19
-                                            hours ago</span>
-                                        <span class="post-author">
-                                            <span> by </span>
-                                            <a href="author.html">Rodinho Summon</a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-xs-12 col-sm-6 col-md-6">
-                            <div class="post-featured-style" style="background-image:url(images/news/news-04.jpg)">
-                                <div class="post-content">
-                                    <a href="#" class="post-cat bg-info">travel</a>
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                                    </h2>
-                                    <div class="post-meta mt-2">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19
-                                            hours ago</span>
-                                        <span class="post-author">
-                                            <span> by </span>
-                                            <a href="author.html">Rodinho Summon</a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6">
+                    <div class="text-right ml-3">
+                        <p class="text-dark mt-3"><i class="fa-regular fa-clock"></i> ২৭ মিনিট আগে | বাংলাদেশ</p>
+                        <h1 class="title-tags">আগুন নিয়ন্ত্রণে এলেও এখনো ধোঁয়াচ্ছন্ন পুরো এলাকা</h1>
+                        ব্যবসায়ীরা পুড়ে যাওয়া দোকান হাতড়ে খুঁজছেন, কিছু পাওয়া যায় কি না। তবে তাদের ভাষ্য, 'ছাই ছাড়া কিছু
+                        নেই'।
+                        ব্যবসায়ীরা জানান, মোহাম্মদপুর কৃষি মার্কেটের যে অংশে আগুন লেগেছে সেটা নতুন বাজার নামে পরিচিত। ওই
+                        মার্কেটে সাড়ে চার শতাধিক দোকান ছিল। সেগুলোর মধ্যে সোনার দোকান, কাপড়ের দোকান, বাসনপত্রের দোকান,
+                        কাঁচাবাজারসহ বিভিন্ন ধরনের দোকান ছিল। সেগুলোর সবই এখন পুড়ে ছাই হয়ে গেছে।
                     </div>
                 </div>
             </div>
@@ -110,409 +43,131 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="news-style-one">
                         <h3 class="news-title">
-                            <span>Editor Picks</span>
+                            <span>সংবাদ</span>
                         </h3>
                         <div class="news-style-one-slide">
+
                             <div class="item">
                                 <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-01.jpg" alt="post-image" />
-                                        </a>
-                                    </div>
                                     <div class="post-content">
                                         <h2 class="post-title mt-3">
-                                            <a href="single-post.html">Ex-Googler warns coding bootcamps are
-                                                lacking</a>
+                                            <a href="#">‘আগুন নেভানোয় সবচেয়ে বেশি বেগ পেতে হয়েছে পানি ও উৎসুক জনতা
+                                                নিয়ে’</a>
                                         </h2>
                                         <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
+                                                |</span>
                                             <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
+                                                বাংলাদেশ
                                             </span>
                                         </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid hic.</p>
+                                        <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে পানির
+                                            সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
                                     </div>
-                                </div>
-
-
-                                <div class="post-block-wrapper clearfix mb-5 ">
                                     <div class="post-thumbnail">
                                         <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-02.jpg" alt="post-thumbnail" />
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/1.png') }}"
+                                                alt="post-image" />
                                         </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title">
-                                            <a href="single-post.html">Extra Crunch The next service marketplace wave:
-                                                Vertical </a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
-                                            <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
-                                            </span>
-                                        </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid hic.</p>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="item">
                                 <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-03.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
                                     <div class="post-content">
-                                        <h2 class="post-title ">
-                                            <a href="single-post.html">Apple HomePod review: locked in device to start
-                                                out</a>
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">কৃষি মার্কেটে অগ্নিকাণ্ডে ২১৭ দোকান ক্ষতিগ্রস্ত হয়েছে:
+                                                ডিএনসিসি</a>
                                         </h2>
                                         <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
+                                                |</span>
                                             <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
+                                                বাংলাদেশ
                                             </span>
                                         </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid hic.</p>
+                                        <p>ব্যবসায়ীরা দাবি করেন বৈধ-অবৈধ মিলিয়ে মার্কেটে ৩৫০টি দোকান রয়েছে। তবে ডিএনসিসির
+                                            নির্বাহী কর্মকর্তা সেলিম রেজার মতে, ৩১৭টি দোকান বরাদ্দ ছিল, যার মধ্যে ২১৭টি
+                                            ক্ষতিগ্রস্ত হয়েছে।</p>
+                                    </div>
+                                    <div class="post-thumbnail">
+                                        <a href="single-post.htm">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/2.png') }}"
+                                                alt="post-image" />
+                                        </a>
                                     </div>
                                 </div>
-
-
+                            </div>
+                            <div class="item">
                                 <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-04.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
                                     <div class="post-content">
-                                        <h2 class="post-title title-lg">
-                                            <a href="single-post.html">Intel’s new smart glasses actually look good</a>
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">‘আগুন নেভানোয় সবচেয়ে বেশি বেগ পেতে হয়েছে পানি ও উৎসুক জনতা
+                                                নিয়ে’</a>
                                         </h2>
                                         <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
+                                                |</span>
                                             <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
+                                                বাংলাদেশ
                                             </span>
                                         </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid Reiciendis.</p>
-
+                                        <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে পানির
+                                            সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix  mb-5">
                                     <div class="post-thumbnail">
                                         <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-05.jpg" alt="post-thumbnail" />
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/1.png') }}"
+                                                alt="post-image" />
                                         </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title">
-                                            <a href="single-post.html">Here's How To Get Free Pizza On lets check it
-                                                out</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
-                                            <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
-                                            </span>
-                                        </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid hic.</p>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="post-block-wrapper clearfix  mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-06.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title">
-                                            <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                                        </h2>
-
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
-                                            <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
-                                            </span>
-                                        </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid similique.</p>
-
                                     </div>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="post-block-wrapper clearfix  mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-07.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
+                                <div class="post-block-wrapper clearfix mb-5">
                                     <div class="post-content">
-                                        <h2 class="post-title">
-                                            <a href="single-post.html">Your social media apps want to help</a>
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">কৃষি মার্কেটে অগ্নিকাণ্ডে ২১৭ দোকান ক্ষতিগ্রস্ত হয়েছে:
+                                                ডিএনসিসি</a>
                                         </h2>
                                         <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
+                                                |</span>
                                             <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
+                                                বাংলাদেশ
                                             </span>
                                         </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid hic.</p>
+                                        <p>ব্যবসায়ীরা দাবি করেন বৈধ-অবৈধ মিলিয়ে মার্কেটে ৩৫০টি দোকান রয়েছে। তবে ডিএনসিসির
+                                            নির্বাহী কর্মকর্তা সেলিম রেজার মতে, ৩১৭টি দোকান বরাদ্দ ছিল, যার মধ্যে ২১৭টি
+                                            ক্ষতিগ্রস্ত হয়েছে।</p>
                                     </div>
-                                </div>
-
-
-                                <div class="post-block-wrapper clearfix  mb-5">
                                     <div class="post-thumbnail">
                                         <a href="single-post.htm">
-                                            <img class="img-fluid" src="images/news/news-08.jpg" alt="post-thumbnail" />
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/2.png') }}"
+                                                alt="post-image" />
                                         </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title">
-                                            <a href="single-post.html">PS4 Games Sale: All The PSN Deals</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
-                                            <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
-                                            </span>
-                                        </div>
-                                        <p>Suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque
-                                            assumenda laborum facere aliquid Reiciendis.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="py-40"></div>
-                    <div class="news-style-two">
-                        <h3 class="news-title">
-                            <span>Tech</span>
-                        </h3>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="images/news/news-09.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <a class="post-category" href="categoty-style1.html">Tech</a>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="single-post.html">YouTube will remove ads and downgrade</a>
-                                        </h2>
 
-
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>5 hours
-                                                ago</span>
-                                            <span class="post-author">
-                                                by
-                                                <a href="author.html">Tarnak Sunder</a>
-                                            </span>
-                                        </div>
-                                        <p>Lumbersexual meh sustainable Thundercats meditation kogi. Tilde Pitchfork
-                                            vegan, gentrify minim
-                                            elit semiotics non messenger bag Austin which roasted</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="post-list-block m-top-0">
-                                    <div class="post-block-wrapper post-float clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-04.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-
-                                        <div class="post-content">
-                                            <h2 class="post-title title-sm">
-                                                <a href="single-post.html">Intel’s new smart glasses actually look
-                                                    good</a>
-                                            </h2>
-                                            <div class="post-meta">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>7 hours
-                                                    ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="post-block-wrapper post-float clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-03.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-
-                                        <div class="post-content">
-                                            <h2 class="post-title title-sm">
-                                                <a href="single-post.html">Apple HomePod review: locked in</a>
-                                            </h2>
-                                            <div class="post-meta">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>10 hours
-                                                    ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="post-block-wrapper post-float clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-07.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-
-                                        <div class="post-content">
-                                            <h2 class="post-title title-sm">
-                                                <a href="single-post.html">Your social media apps want to help</a>
-                                            </h2>
-                                            <div class="post-meta">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>11 hours
-                                                    ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="post-block-wrapper post-float clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-02.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-
-                                        <div class="post-content">
-                                            <h2 class="post-title title-sm">
-                                                <a href="single-post.html">Flu season rages on,2009 swine flu</a>
-                                            </h2>
-                                            <div class="post-meta">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>12 hours
-                                                    ago</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
+
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="sidebar">
                         <div class="widget">
                             <h3 class="news-title">
-                                <span>Stay in touch</span>
+                                <span>সর্বশেষ সংবাদ</span>
                             </h3>
-
-                            <ul class="list-inline social-widget">
-                                <li class="list-inline-item">
-                                    <a class="social-page youtube" href="#">
-                                        <i class="fa fa-play"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="social-page facebook" href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="social-page twitter" href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="social-page pinterest" href="#">
-                                        <i class="fa fa-pinterest"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="social-page linkedin" href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <a class="social-page youtube" href="#">
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                        <div class="widget">
-                            <h3 class="news-title">
-                                <span>Hot News</span>
-                            </h3>
-
-                            <div class="post-overlay-wrapper">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-15.jpg" alt="post-thumbnail" />
-                                </div>
-                                <div class="post-content">
-                                    <a class="post-category white" href="post-category-1.html">Fashion</a>
-                                    <h2 class="post-title">
-                                        <a href="single-post.html">First Look At Self-Portrait's Autumn
-                                            Collection...</a>
-                                    </h2>
-                                    <div class="post-meta white">
-                                        <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>17 jun,2019</span>
-                                        <span> by </span>
-                                        <span class="post-author">
-                                            <a href="author.html">Jammy Anderson</a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="post-list-block">
                                 <div class="post-block-wrapper post-float ">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="images/news/news-03.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Apple HomePod review: locked in</a>
+                                            <a href="#">সাড়ে ৫ ঘণ্টা পর কৃষি মার্কেটের আগুন নিয়ন্ত্রণে</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>2 hours
@@ -520,15 +175,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="post-block-wrapper post-float">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="images/news/news-05.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Intel’s new smart glasses actually look good</a>
+                                            <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
+                                                বিক্ষোভ</a>
                                         </h2>
                                         <div class="post-meta">
                                             <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 15 March ,
@@ -536,136 +188,141 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="post-block-wrapper post-float">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="images/news/news-11.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
+                                <hr>
 
+                                <div class="post-block-wrapper post-float">
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Free Two-Hour Delivery From Whole Foods</a>
+                                            <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
+                                                বিক্ষোভ</a>
                                         </h2>
                                         <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 5 hours
-                                                ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post-block-wrapper post-float">
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.html">
-                                            <img class="img-fluid" src="images/news/news-06.jpg" alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="single-post.html">Here's How To Get Free Pizza On</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 17 June,
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 15 March ,
                                                 2019</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="widget mb-0">
-                            <h3 class="news-title">
-                                <span>Beauty Blog</span>
-                            </h3>
-                            <div class="post-slide">
-                                <div class="item">
-                                    <div class="post-overlay-wrapper clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-16.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-category white" href="post-category-2.html">Hair</a>
-                                            <h2 class="post-title">
-                                                <a href="single-post.html">On Beauty: Style and Fashion Blogger...</a>
-                                            </h2>
-                                            <div class="post-meta white">
-                                                <span class="posted-time">4 hours ago</span>
-                                                <span> by </span>
-                                                <span class="post-author">
-                                                    <a href="author.html">Jammy Anderson</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <hr>
 
-                                    <div class="post-overlay-wrapper clearfix mt-3">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-18.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-category white" href="post-category-2.html">Eyes</a>
-                                            <h2 class="post-title">
-                                                <a href="single-post.html">The Best Eye Makeup Tutorials fo...</a>
-                                            </h2>
-                                            <div class="post-meta white">
-                                                <span class="posted-time">5 hours ago</span>
-                                                <span> by </span>
-                                                <span class="post-author">
-                                                    <a href="author.html">Roberto Carlous</a>
-                                                </span>
-                                            </div>
+                                <div class="post-block-wrapper post-float">
+                                    <div class="post-content">
+                                        <h2 class="post-title title-sm">
+                                            <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
+                                                বিক্ষোভ</a>
+                                        </h2>
+                                        <div class="post-meta">
+                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 15 March ,
+                                                2019</span>
                                         </div>
                                     </div>
                                 </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <div class="item ">
-                                    <div class="post-overlay-wrapper clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-17.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-
-                                        <div class="post-content">
-                                            <a class="post-category white" href="post-category-2.html">Nail</a>
-                                            <h2 class="post-title">
-                                                <a href="single-post.html">5 Best Essie Polishes for Winter...</a>
-                                            </h2>
-                                            <div class="post-meta white">
-                                                <span class="posted-time">10 hours ago</span>
-                                                <span> by </span>
-                                                <span class="post-author">
-                                                    <a href="author.html">Jamalick Jack</a>
-                                                </span>
-                                            </div>
-                                        </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="news-style-two">
+                        <h3 class="news-title">
+                            <span>ফিচার</span>
+                        </h3>
+                        <div class="row feature">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/3.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
                                     </div>
-                                    <div class="post-overlay-wrapper mt-3 clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-19.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-category white" href="post-category-2.html">Lips</a>
-                                            <h2 class="post-title">
-                                                <a href="single-post.html">This Red Hot Metallic Lip Tutori...</a>
-                                            </h2>
-                                            <div class="post-meta white">
-                                                <span class="posted-time">5 hours ago</span>
-                                                <span> by </span>
-                                                <span class="post-author">
-                                                    <a href="author.html">Jerin Khan</a>
-                                                </span>
-                                            </div>
-                                        </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">‘চোখের সামনে সব পুড়ে গেল’</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/4.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">সরকার সমর্থক ‘প্রগতিশীল ইসলামী জোটের’ আত্মপ্রকাশ</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/5.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">বিচারকের সই-সিল জাল করে গ্রেপ্তারি পরোয়ানা,
+                                                ‘উদ্দেশ্য হয়রানি’</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/6.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">কেন স্যালাইনের এতো সংকট!</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/7.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">লিবিয়ায় ‘ড্যানিয়েল’ ঝড়ের আঘাতে ৬ বাংলাদেশি নিহত</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/8.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">অবিলম্বে জ্বালানি তেলের বর্ধিত মূল্য প্রত্যাহারের দাবি যাত্রী
+                                                কল্যাণ সমিতির</a>
+                                        </h2>
                                     </div>
                                 </div>
                             </div>
@@ -675,6 +332,7 @@
             </div>
         </div>
     </section>
+    <div class="py-40"></div>
 
     <section class="news-style-four bg-light section-padding">
         <div class="container">
@@ -682,226 +340,127 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="block">
                         <h3 class="news-title">
-                            <span>Tour</span>
+                            <span>আন্তর্জাতিক</span>
                         </h3>
                         <div class="post-overlay-wrapper clearfix">
                             <div class="post-thumbnail">
-                                <img class="img-fluid" src="images/news/news-13.jpg" alt="post-thumbnail" />
+                                <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/10.png') }}"
+                                    alt="post-thumbnail" />
                             </div>
 
                             <div class="post-content">
-                                <h2 class="post-title ">
-                                    <a href="single-post.html">An Asteroid Is Passing Earth Today: Here's How to</a>
-                                </h2>
                                 <div class="post-meta white">
-                                    <span class="posted-time">2 hours ago</span>
-                                    <span class="post-author">by
-                                        <a href="author.html">Rock Madveen</a>
-                                    </span>
-                                    <span class="pull-right">
-                                        <i class="fa fa-comments"></i>
-                                        <a href="single-post.html#comments">05</a>
+                                    <span class="posted-time">
+                                        <a href="">পুতিন-কিম সাক্ষাৎ: আলোচনায় ইউক্রেন যুদ্ধ, সামরিক বিষয় ও
+                                            স্যাটেলাইট সহযোগিতা</a>
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        <hr>
 
                         <div class="post-list-block">
                             <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-11.jpg" alt="post-thumbnail" />
-
-                                </div>
-
                                 <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Snow and Freezing Rain in Paris Forces the</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">3 hours ago</span>
-                                    </div>
+                                    <h5 class="title-sm">
+                                        <a href="#">মরক্কোয় ভূমিকম্প: মৃতের সংখ্যা ২ হাজার ছাড়াল</a>
+                                    </h5>
                                 </div>
                             </div>
-
+                            <hr>
                             <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-04.jpg" alt="post-thumbnail" />
-                                </div>
                                 <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Your social media apps want to help.</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">8 hours ago</span>
-                                    </div>
+                                    <h5 class="title-sm">
+                                        <a href="#">ইউক্রেনে যুক্তরাজ্যের চ্যালেঞ্জার ট্যাংক ধ্বংস করেছে রাশিয়া</a>
+                                    </h5>
                                 </div>
                             </div>
-
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-12.jpg" alt="post-thumbnail" />
-                                </div>
-
-                                <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Today Is the Day Most People Quit Their New
-                                            Year's</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">9 hours ago</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="block">
                         <h3 class="news-title">
-                            <span>Game</span>
+                            <span>খেলাধুলা</span>
                         </h3>
                         <div class="post-overlay-wrapper clearfix">
                             <div class="post-thumbnail">
-                                <img class="img-fluid" src="images/news/news-08.jpg" alt="post-thumbnail" />
+                                <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/11.png') }}"
+                                    alt="post-thumbnail" />
                             </div>
 
                             <div class="post-content">
-                                <h2 class="post-title">
-                                    <a href="single-post.html">Call Of Duty: Black Ops 4 Releasing</a>
-                                </h2>
                                 <div class="post-meta white">
-                                    <span class="posted-time">3 hours ago</span>
-                                    <span class="post-author">by
-                                        <a href="author.html">Arya Stark</a>
-                                    </span>
-                                    <span class="pull-right">
-                                        <i class="fa fa-comments"></i>
-                                        <a href="single-post.html#comments">10</a>
+                                    <span class="posted-time">
+                                        <a href="">ওয়ানডেতে ইংল্যান্ডের ব্যক্তিগত সর্বোচ্চ ইনিংসের রেকর্ড গড়লেন
+                                            স্টোকস</a>
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        <hr>
 
                         <div class="post-list-block">
                             <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-03.jpg" alt="post-thumbnail" />
-                                </div>
-
                                 <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Apple HomePod review: locked in</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">4 hours ago</span>
-                                    </div>
+                                    <h5 class="title-sm">
+                                        <a href="#">এশিয়া কাপ থেকে ছিটকে গেলেন নাসিম</a>
+                                    </h5>
                                 </div>
                             </div>
-
+                            <hr>
                             <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-01.jpg" alt="post-thumbnail" />
-                                </div>
-
                                 <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Ex-Googler warns coding bootcamps are lacking</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">5 hours ago</span>
-                                    </div>
+                                    <h5 class="title-sm">
+                                        <a href="#">সিটিতে ফিরেছেন গার্দিওলা</a>
+                                    </h5>
                                 </div>
                             </div>
-
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-06.jpg" alt="post-thumbnail" />
-                                </div>
-
-                                <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">PS4 Games Sale: All The PSN Deals</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">12 hours ago</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="block">
                         <h3 class="news-title">
-                            <span>Health</span>
+                            <span>বিনোদন</span>
                         </h3>
                         <div class="post-overlay-wrapper clearfix">
                             <div class="post-thumbnail">
-                                <img class="img-fluid" src="images/news/news-05.jpg" alt="post-thumbnail" />
+                                <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/12.png') }}"
+                                    alt="post-thumbnail" />
                             </div>
 
                             <div class="post-content">
-                                <h2 class="post-title">
-                                    <a href="single-post.html">Here's How To Get Free Pizza On</a>
-                                </h2>
                                 <div class="post-meta white">
-                                    <span class="posted-time">an hour ago</span>
-                                    <span class="post-author">by
-                                        <a href="author.html">Mad King</a>
-                                    </span>
-                                    <span class="pull-right">
-                                        <i class="fa fa-comments"></i>
-                                        <a href="single-post.html#comments">30</a>
+                                    <span class="posted-time">
+                                        <a href="">৫ দিনেই ৫৫০ কোটি রুপি আয় ‘জওয়ান’ এর, শাহরুখকে শুভেচ্ছা জানালেন
+                                            অক্ষয়</a>
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        <hr>
 
                         <div class="post-list-block">
                             <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-10.jpg" alt="post-thumbnail" />
-                                </div>
-
                                 <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Free Two-Hour Delivery From Whole Foods</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">2 hours ago</span>
-                                    </div>
+                                    <h5 class="title-sm">
+                                        <a href="#">চতুর্থবারেও ব্যর্থ! অবসরে যাচ্ছেন না হায়াও মিয়াজাকি</a>
+                                    </h5>
                                 </div>
                             </div>
-
+                            <hr>
                             <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-07.jpg" alt="post-thumbnail" />
-                                </div>
-
                                 <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Your social media apps want to help</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">4 hours ago</span>
-                                    </div>
+                                    <h5 class="title-sm">
+                                        <a href="#">১৮ বছর পর আসছে রোলিং স্টোনসের নতুন অ্যালবাম 'হ্যাকনি
+                                            ডায়মন্ডস'</a>
+                                    </h5>
                                 </div>
                             </div>
-
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-thumbnail">
-                                    <img class="img-fluid" src="images/news/news-14.jpg" alt="post-thumbnail" />
-                                </div>
-
-                                <div class="post-content">
-                                    <h2 class="post-title title-sm">
-                                        <a href="single-post.html">Snow and Freezing Rain in Paris Forces the</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <span class="posted-time">9 hours ago</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -910,139 +469,256 @@
     </section>
 
 
-    <section class="section-padding">
+    <section class="block-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                    <div class="all-news-block">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="news-style-one">
                         <h3 class="news-title">
-                            <span>Latest Articles</span>
+                            <span>সংবাদ</span>
                         </h3>
-                        <div class="all-news">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="post-block-wrapper post-float-half clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-01.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-category" href="post-category-2.html">Google</a>
-                                            <h2 class="post-title mt-3">
-                                                <a href="single-post.html">Ex-Googler warns coding bootcamps are
-                                                    lacking</a>
-                                            </h2>
-                                            <div class="post-meta">
-                                                <span class="posted-time">an hour ago</span>
-                                                <span class="post-author">by
-                                                    <a href="author.html">John Snow</a>
-                                                </span>
-                                            </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eaque,
-                                                aliquid accusamus
-                                                soluta!...
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="news-style-one-slide">
 
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="post-block-wrapper post-float-half clearfix">
-                                        <div class="post-thumbnail">
-                                            <a href="single-post.html">
-                                                <img class="img-fluid" src="images/news/news-12.jpg"
-                                                    alt="post-thumbnail" />
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <a class="post-category" href="post-category-2.html">Health</a>
-                                            <h2 class="post-title mt-3">
-                                                <a href="single-post.html">Today Is the Day Most People Quit Their New
-                                                    Year's Party</a>
-                                            </h2>
-                                            <div class="post-meta">
-                                                <span class="posted-time">4 hours ago</span>
-                                                <span class="post-author">by
-                                                    <a href="author.html">Rimmon Ronnick</a>
-                                                </span>
-                                            </div>
-                                            <p>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
-                                                blanditiis hic
-                                                cumque excepturi...
-                                            </p>
+                            <div class="item">
+                                <div class="post-block-wrapper clearfix mb-5">
+                                    <div class="post-thumbnail">
+                                        <a href="" style="display: flex; justify-content: center">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/13.png') }}"
+                                                alt="post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content text-center">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
+                                                যে শিক্ষা দিলেন</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="post-author">
+                                                লেখক: বারখা দাত
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="item">
+                                <div class="post-block-wrapper clearfix mb-5">
+                                    <div class="post-thumbnail">
+                                        <a href="" style="display: flex; justify-content: center">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/11.png') }}"
+                                                alt="post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content text-center">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
+                                                যে শিক্ষা দিলেন</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="post-author">
+                                                লেখক: বারখা দাত
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="post-block-wrapper clearfix mb-5">
+                                    <div class="post-thumbnail">
+                                        <a href="" style="display: flex; justify-content: center">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/14.png') }}"
+                                                alt="post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content text-center">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
+                                                যে শিক্ষা দিলেন</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="post-author">
+                                                লেখক: বারখা দাত
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="post-block-wrapper clearfix mb-5">
+                                    <div class="post-thumbnail">
+                                        <a href="" style="display: flex; justify-content: center">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/10.png') }}"
+                                                alt="post-image" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content text-center">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
+                                                যে শিক্ষা দিলেন</a>
+                                        </h2>
+                                        <div class="post-meta mb-2">
+                                            <span class="post-author">
+                                                লেখক: বারখা দাত
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
-                    <nav aria-label="pagination-wrapper" class="pagination-wrapper">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item active">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="fa fa-angle-double-left mr-2"></i></span>
-                                    <span class="">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span class="">Next</span>
-                                    <span aria-hidden="true"><i class="fa fa-angle-double-right ml-2"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div class="py-40"></div>
                 </div>
-                <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
-                    <div class="sidebar sidebar-right">
-                        <div class="widget">
-                            <h3 class="news-title">
-                                <span>Top Authors</span>
-                            </h3>
-                            <div class="post-list-block">
-                                <div class=" review-post-list">
-                                    <div class="top-author">
-                                        <img src="images/news/author-01.jpg" alt="author-thumb">
-                                        <div class="info">
-                                            <h4 class="name"><a href="author.html">Jack Rockshow</a></h4>
-                                            <ul class="list-unstyled">
-                                                <li>37 Posts</li>
-                                            </ul>
-                                        </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="news-style-two">
+                        <h3 class="news-title">
+                            <span>দেশজুড়ে</span>
+                        </h3>
+                        <div class="row feature">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/15.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
                                     </div>
-                                    <div class="top-author">
-                                        <img src="images/news/author-02.jpg" alt="author-thumb">
-                                        <div class="info">
-                                            <h4 class="name"><a href="author.html">Lint Handson</a></h4>
-                                            <ul class="list-unstyled">
-                                                <li>28 Posts</li>
-                                            </ul>
-                                        </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">চট্টগ্রাম শহরে জলাবদ্ধতা: গন্ডগোলটা কোথায়?</a>
+                                        </h2>
                                     </div>
-                                    <div class="top-author">
-                                        <img src="images/news/author-03.jpg" alt="author-thumb">
-                                        <div class="info">
-                                            <h4 class="name"><a href="author.html">Ronny Robeen</a></h4>
-                                            <ul class="list-unstyled">
-                                                <li>19 Posts</li>
-                                            </ul>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/16.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
                                     </div>
-                                    <div class="top-author">
-                                        <img src="images/news/author-02.jpg" alt="author-thumb">
-                                        <div class="info">
-                                            <h4 class="name"><a href="author.html">Handson</a></h4>
-                                            <ul class="list-unstyled">
-                                                <li>18 Posts</li>
-                                            </ul>
-                                        </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">টাঙ্গাইলে দলিল জাল করে জমি কেনাবেচা করায় চার চিকিৎসকসহ ১০ জন
+                                                কারাগারে</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/17.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">আখাউড়া-আগরতলা রেলপথে পরীক্ষামূলক ট্রেন চলবে আগামীকাল</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/18.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">নারায়ণগঞ্জে ফ্ল্যাটে আগুন, ব়্যাব সদস্যসহ দগ্ধ ২</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/19.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">ছাত্রলীগের বিরুদ্ধে স্বাস্থ্য কমপ্লেক্সের ২ কর্মীকে মারধরের
+                                                অভিযোগ</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/20.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">আখাউড়া-আগরতলা রেলপথে পরীক্ষামূলক ট্রেন চলবে আগামীকাল</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/21.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">যান্ত্রিক ত্রুটি সারাইয়ের পর আবারও উৎপাদনে ফিরল রামপাল
+                                                তাপবিদ্যুৎকেন্দ্র</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/22.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">চট্টগ্রামে বিএনপি কার্যালয়ে হামলার ঘটনায় মামলা না নেওয়ার
+                                                অভিযোগ</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="post-block-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/23.png') }}"
+                                                alt="post-thumbnail" />
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h2 class="post-title mt-3">
+                                            <a href="#">ইটিটি কক্ষের সামনে দুই পক্ষের মধ্যে মারামারি হয়: বারডেমের
+                                                নিরাপত্তা কর্মকর্তা</a>
+                                        </h2>
                                     </div>
                                 </div>
                             </div>
@@ -1055,36 +731,5 @@
 
 @endsection
 @section('custom_js')
-    {{-- <script>
-        var swiper = new Swiper(".slide-content", {
-            slidesPerView: 3,
-            spaceBetween: 25,
-            loop: true,
-            autoplay: true,
-            centerSlide: 'true',
-            fade: 'true',
-            grabCursor: 'true',
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
 
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                520: {
-                    slidesPerView: 2,
-                },
-                950: {
-                    slidesPerView: 4,
-                },
-            },
-        });
-    </script> --}}
 @endsection
