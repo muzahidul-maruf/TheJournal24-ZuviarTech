@@ -12,4 +12,8 @@ class MasterController extends Controller
         // return view('frontend.layout.master');
         return view('frontend.pages.index');
     }
+    public function newsDetails($slug)
+    {
+        return view('frontend.pages.news-details');
+    }
 }

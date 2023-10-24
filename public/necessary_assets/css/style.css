@@ -384,7 +384,7 @@ blockquote.pull-left {
 .btn-primary,
 .btn-dark {
     border: 0;
-    border-radius: 2px;
+    border-radius: 10px;
     padding: 15px 30px;
     font-weight: 700;
     text-transform: uppercase;
@@ -401,7 +401,7 @@ blockquote.pull-left {
     background: #013545;
 }
 .btn-primary:hover {
-    background: #d32535;
+    background: #013545;
     color: #fff;
 }
 
@@ -2042,7 +2042,7 @@ select.form-control:not([size]):not([multiple]) {
 /* 11. FOOTER
 ================================================== */
 .footer {
-    background: #000;
+    background: #00141a;
 }
 
 .footer-main {
@@ -2419,3 +2419,34 @@ a {
     }
 }
 /*# sourceMappingURL=style.css.map */
+
+.footer-link {
+    color: #ffffff;
+}
+.footer-link:hover {
+    color: #666;
+}
+
+.footer-primary-color {
+    color: #013545;
+}
+.footer-top .footer-social a {
+    font-size: 16px;
+    padding: 10px 10px;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    color: #fff;
+    background: #013545;
+    border-radius: 2px;
+    padding-top: 5px;
+}
+
+.share-count {
+    border-radius: 5px;
+    border: 1px solid #00141a;
+    padding: 8px 10px;
+}
+.primary-color{
+    color: #013545;
+}
