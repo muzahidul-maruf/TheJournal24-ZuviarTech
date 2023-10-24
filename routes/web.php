@@ -18,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/news/{slug}', [MasterController::class, 'newsDetails'])->name('news-details');
+
 
 Route::get('/', [MasterController::class, 'homePage'])->name('home-page');
