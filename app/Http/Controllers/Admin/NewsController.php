@@ -44,6 +44,8 @@ class NewsController extends Controller
         }
 
         $model->slug = $slug;
+        $model->category_id = $request->category_id;
+        $model->writter = $request->writter;
         $model->description = $request->description;
 
         //image upload
@@ -65,9 +67,10 @@ class NewsController extends Controller
 
     public function edit($id)
     {
-        $cat = Category::where('id', $id)->first();
-        if ($cat) {
-            return view('admin_panel/pages/category/edit', compact('cat'));
+        $all_cat = Category::latest()->get();
+        $news = News::with(['category'])->where('id', $id)->first();
+        if ($news) {
+            return view('admin_panel/pages/news/edit', compact('news', 'all_cat'));
         }
         return abort(404);
     }
@@ -78,21 +81,23 @@ class NewsController extends Controller
 
         //Validation
         $validated = $request->validate([
-            'name' => 'required|unique:categories,name,' . $id,
+            'title' => 'required|unique:news,title,' . $id,
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
-        $model = Category::find($id);
+        $model = News::find($id);
 
-        $model->name = $request->name;
-        $slug = Str::slug($request->name);
+        $model->title = $request->title;
+        $slug = Str::slug($request->title);
         //check slug
-        $checkSlug = Category::where('slug', $slug)->where('id', '!=', $id)->count();
+        $checkSlug = News::where('slug', $slug)->where('id', '!=', $id)->count();
 
         if ($checkSlug > 0) {
             $slug = time() . '-' . $slug;
         }
 
         $model->slug = $slug;
+        $model->category_id = $request->category_id;
+        $model->writter = $request->writter;
         $model->description = $request->description;
 
 
@@ -114,12 +119,12 @@ class NewsController extends Controller
 
         $model->save();
 
-        return redirect()->route('admin.news.category.index')->with('message', 'Update Successful.');
+        return redirect()->route('admin.news.index')->with('message', 'Update Successful.');
     }
 
     public function destroy($id)
     {
-        $model = Category::find($id);
+        $model = News::find($id);
 
         if ($model) {
             //remove old image form folder if new image comes
@@ -136,7 +141,7 @@ class NewsController extends Controller
     }
     public function statusUpdate($id)
     {
-        $model = Category::find($id);
+        $model = News::find($id);
 
         if ($model) {
             ($model->status == 1) ? $model->status = 0 : $model->status = 1;
@@ -146,7 +151,7 @@ class NewsController extends Controller
     }
     public function popularitystatusUpdate($id)
     {
-        $model = Category::find($id);
+        $model = News::find($id);
 
         if ($model) {
             ($model->is_popular == 1) ? $model->is_popular = 0 : $model->is_popular = 1;
