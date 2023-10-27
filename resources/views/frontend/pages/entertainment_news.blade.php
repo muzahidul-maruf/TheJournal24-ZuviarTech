@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
-@section('international_news_menu_active', 'active')
+@section('entertainment_news_menu_active', 'active')
 @section('page_title')
-     | আন্তর্জাতিক
+     | বিনোদন
 @endsection
 
 @section('custom_css')
@@ -24,7 +24,7 @@
                             <span>দেশজুড়ে</span>
                         </h3> --}}
                         <div class="row feature">
-                            @foreach ($international_news as $key => $item)
+                            @foreach ($entertainment_news as $key => $item)
                                 @if ($key == 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
@@ -44,7 +44,7 @@
                                     </div>
                                 @endif
                             @endforeach
-                            @foreach ($international_news as $key => $item)
+                            @foreach ($entertainment_news as $key => $item)
                                 @if ($key > 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
@@ -80,7 +80,7 @@
 
                 <div class="col-lg-9">
                     <div class="post-list-block">
-                        @foreach ($international_news as $key => $item)
+                        @foreach ($entertainment_news as $key => $item)
                             @if ($key > 0)
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-content">
@@ -112,7 +112,7 @@
                                 <span>সর্বাধিক পঠিত</span>
                             </h3>
                             <div class="post-list-block">
-                                @foreach ($international_news as $item)
+                                @foreach ($entertainment_news as $item)
                                     <div class="post-block-wrapper post-float ">
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">

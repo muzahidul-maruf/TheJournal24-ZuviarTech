@@ -12,30 +12,26 @@
 @endsection
 
 @section('content')
+    @if ($hero_news)
+        <section class="featured-posts" style="background-color: #FFECDA">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-md-12 col-xs-12 col-lg-6" style="text-align:center;">
+                        <img src="{{ asset($hero_news->image) }}" alt="" class="img-fluid">
+                    </div>
 
-    <section class="featured-posts" style="background-color: #FFECDA">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-md-12 col-xs-12 col-lg-6" style="text-align:center;">
-                    <img src="{{ asset('necessary_assets/pics/hero/1.png') }}" alt="" class="img-fluid">
-                </div>
 
-
-                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6">
-                    <div class="text-right ml-3">
-                        <p class="text-dark mt-3"><i class="fa-regular fa-clock"></i> ২৭ মিনিট আগে | বাংলাদেশ</p>
-                        <h1 class="title-tags">আগুন নিয়ন্ত্রণে এলেও এখনো ধোঁয়াচ্ছন্ন পুরো এলাকা</h1>
-                        ব্যবসায়ীরা পুড়ে যাওয়া দোকান হাতড়ে খুঁজছেন, কিছু পাওয়া যায় কি না। তবে তাদের ভাষ্য, 'ছাই ছাড়া কিছু
-                        নেই'।
-                        ব্যবসায়ীরা জানান, মোহাম্মদপুর কৃষি মার্কেটের যে অংশে আগুন লেগেছে সেটা নতুন বাজার নামে পরিচিত। ওই
-                        মার্কেটে সাড়ে চার শতাধিক দোকান ছিল। সেগুলোর মধ্যে সোনার দোকান, কাপড়ের দোকান, বাসনপত্রের দোকান,
-                        কাঁচাবাজারসহ বিভিন্ন ধরনের দোকান ছিল। সেগুলোর সবই এখন পুড়ে ছাই হয়ে গেছে।
+                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6">
+                        <div class="text-right ml-3">
+                            <p class="text-dark mt-3"><i class="fa-regular fa-clock"></i> ২৭ মিনিট আগে | বাংলাদেশ</p>
+                            <h1 class="title-tags">{{$hero_news->title}}</h1>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    @endif
 
     <section class="block-wrapper">
         <div class="container">

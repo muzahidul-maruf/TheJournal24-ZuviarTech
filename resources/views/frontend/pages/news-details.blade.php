@@ -17,29 +17,8 @@
     <section class="block-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <h5>বাংলাদেশ</h5>
-                    <p class="mb-1">দ্যা জার্নাল রিপোর্ট</p>
-                    {{-- <p class="">রোববার সেপ্টেম্বর ১৭, ২০২৩</p> --}}
-                    <p class="">
-                        <span class="share-count">
-                            ১৪ বার শেয়ার <i class="fa-solid fa-share"></i>
-                        </span>
-                    </p>
-                    <p>
-                    <ul class="list-inline footer-social">
-                        <li class="li list-inline-item"><a href="javascript:void(0)"><i
-                                    class="fa-brands fa-facebook"></i></a>
-                        </li>
-                        <li class="li list-inline-item"><a href="javascript:void(0)"><i
-                                    class="fa-brands fa-twitter"></i></a></li>
-                        <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    </ul>
-                    </p>
-
-                </div>
-                <div class="col-lg-6 ">
+                
+                <div class="col-lg-9 ">
 
                     <h1 class="primary-color">
                         {{ $news_details->title }}
@@ -82,6 +61,27 @@
                 </div>
 
                 <div class="col-lg-3">
+                    <div class="row py-4">
+                        <h5>বাংলাদেশ</h5>
+                    <p class="mb-1">দ্যা জার্নাল রিপোর্ট</p>
+                    {{-- <p class="">রোববার সেপ্টেম্বর ১৭, ২০২৩</p> --}}
+                    <p class="">
+                        <span class="share-count">
+                            ১৪ বার শেয়ার <i class="fa-solid fa-share"></i>
+                        </span>
+                    </p>
+                    <p>
+                    <ul class="list-inline footer-social">
+                        <li class="li list-inline-item"><a href="javascript:void(0)"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                        </li>
+                        <li class="li list-inline-item"><a href="javascript:void(0)"><i
+                                    class="fa-brands fa-twitter"></i></a></li>
+                        <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                    </p>
+                    </div>
                     <div class="sidebar">
                         <div class="widget">
                             <h3 class="news-title">
