@@ -12,7 +12,7 @@ class MasterController extends Controller
     {
         $hero_news = News::where('category_id', 6)->latest()->first();
         $news = News::take(9)->get();
-        $latest_news = News::latest()->take(4)->get(['title', 'slug']);
+        $latest_news = News::latest()->take(4)->get(['title', 'slug','created_at']);
         $popular_news = News::where('is_popular', 1)->take(6)->get();
 
         $international_news = News::where('category_id', 2)->latest()->take(4)->get();

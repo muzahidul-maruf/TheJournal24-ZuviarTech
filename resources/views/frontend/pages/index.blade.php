@@ -17,15 +17,22 @@
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-md-12 col-xs-12 col-lg-6" style="text-align:center;">
-                        <img src="{{ asset($hero_news->image) }}" alt="" class="img-fluid">
+                        <a href="{{ route('news-details', $hero_news->slug) }}">
+                            <img src="{{ asset($hero_news->image) }}" alt="" class="img-fluid">
+                        </a>
                     </div>
 
 
                     <div class="col-md-12 col-xs-12 col-sm-12 col-lg-6">
                         <div class="text-right ml-3">
-                            <p class="text-dark mt-3"><i class="fa-regular fa-clock"></i> ২৭ মিনিট আগে | বাংলাদেশ</p>
-                            <h1 class="title-tags">{{$hero_news->title}}</h1>
-                            
+                            <p class="text-dark mt-3"><i class="fa-regular fa-clock"></i>
+                                {{ $hero_news->created_at->diffForHumans() }} | বাংলাদেশ</p>
+                            <h1 class="title-tags">
+                                <a href="{{ route('news-details', $hero_news->slug) }}">
+                                    {{ $hero_news->title }}
+                                </a>
+                            </h1>
+
                         </div>
                     </div>
                 </div>
@@ -51,7 +58,8 @@
                                                     href="{{ route('news-details', $news_item->slug) }}">{{ $news_item->title }}</a>
                                             </h2>
                                             <div class="post-meta mb-2">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
+                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i> 
+                                                    {{ $news_item->created_at->diffForHumans() }}
                                                     |</span>
                                                 <span class="post-author">
                                                     বাংলাদেশ
@@ -172,8 +180,9 @@
                                                     href="{{ route('news-details', $latest_item->slug) }}">{{ $latest_item->title }}</a>
                                             </h2>
                                             <div class="post-meta">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>2 hours
-                                                    ago</span>
+                                                <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>
+                                                    {{ $latest_item->created_at->diffForHumans() }}
+                                                </span>
                                             </div>
                                         </div>
                                     </div>

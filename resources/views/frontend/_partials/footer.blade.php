@@ -7,19 +7,21 @@
                 <p class="footer-primary-color">example@journal24.com</p>
             </div>
             <div class="col-md-4 text-center">
-                <p class="footer-primary-color">Follow Us</p>
-                <ul class="list-inline footer-social">
-                    <li class="li list-inline-item"><a href="javascript:void(0)"><i class="fa-brands fa-facebook"></i></a>
-                    </li>
-                    <li class="li list-inline-item"><a href="javascript:void(0)"><i
-                                class="fa-brands fa-twitter"></i></a></li>
-                    <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                </ul>
+
             </div>
             <div class="col-md-4 text-center">
-                <p class="footer-primary-color">Whatsapp</p>
-                <p class="footer-primary-color">017XXXXXXX</p>
+                {{-- <p class="footer-primary-color">Whatsapp</p>
+                <p class="footer-primary-color">017XXXXXXX</p> --}}
+                <p class="footer-primary-color">Follow Us</p>
+                <ul class="list-inline footer-social">
+                    <li class="li list-inline-item"><a target="_blank" href="https://www.facebook.com/thejournal24"><i
+                                class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="li list-inline-item"><a target="_blank" href="https://twitter.com/thejournal24"><i
+                                class="fa-brands fa-twitter"></i></a></li>
+                    {{-- <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li> --}}
+                </ul>
             </div>
         </div>
 
@@ -28,7 +30,7 @@
 </footer>
 <footer class="footer footer-main ">
     <div class="container">
-        
+
         <div class="row">
             <div class="col-md-4">
                 <div class="logo">
