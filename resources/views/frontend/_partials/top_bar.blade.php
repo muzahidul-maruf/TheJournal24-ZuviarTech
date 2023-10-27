@@ -24,7 +24,7 @@
                             <i class="fa-brands fa-facebook fa-2xl"></i>
                         </span>
                     </a>
-                    <a href="#">
+                    <a target="_blank" href="https://twitter.com/thejournal24">
                         <span class="social-icon">
                             <i class="fa-brands fa-twitter fa-2xl"></i>
                         </span>
