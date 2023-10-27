@@ -46,33 +46,36 @@
                             <span>সংবাদ</span>
                         </h3>
                         <div class="news-style-one-slide">
+                            @foreach ($news as $news_item)
+                                <div class="item">
+                                    <div class="post-block-wrapper clearfix mb-5">
+                                        <div class="post-content">
+                                            <h2 class="post-title mt-3">
+                                                <a
+                                                    href="{{ route('news-details', $news_item->slug) }}">{{ $news_item->title }}</a>
+                                            </h2>
+                                            <div class="post-meta mb-2">
+                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
+                                                    |</span>
+                                                <span class="post-author">
+                                                    বাংলাদেশ
+                                                </span>
+                                            </div>
+                                            <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে পানির
+                                                সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
+                                        </div>
+                                        <div class="post-thumbnail">
+                                            <a href="{{ route('news-details', $news_item->slug) }}">
+                                                <img class="img-fluid" src="{{ asset($news_item->image) }}" alt="post-image"
+                                                    style="height: 180px;" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
 
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">‘আগুন নেভানোয় সবচেয়ে বেশি বেগ পেতে হয়েছে পানি ও উৎসুক জনতা
-                                                নিয়ে’</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
-                                                |</span>
-                                            <span class="post-author">
-                                                বাংলাদেশ
-                                            </span>
-                                        </div>
-                                        <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে পানির
-                                            সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
-                                    </div>
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/1.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
+
+                            {{-- <div class="item">
                                 <div class="post-block-wrapper clearfix mb-5">
                                     <div class="post-content">
                                         <h2 class="post-title mt-3">
@@ -148,7 +151,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -164,19 +167,23 @@
                                 <span>সর্বশেষ সংবাদ</span>
                             </h3>
                             <div class="post-list-block">
-                                <div class="post-block-wrapper post-float ">
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="#">সাড়ে ৫ ঘণ্টা পর কৃষি মার্কেটের আগুন নিয়ন্ত্রণে</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>2 hours
-                                                ago</span>
+
+                                @foreach ($latest_news as $latest_item)
+                                    <div class="post-block-wrapper post-float ">
+                                        <div class="post-content">
+                                            <h2 class="post-title title-sm">
+                                                <a
+                                                    href="{{ route('news-details', $latest_item->slug) }}">{{ $latest_item->title }}</a>
+                                            </h2>
+                                            <div class="post-meta">
+                                                <span class="posted-time"><i class="fa fa-clock-o mr-1"></i>2 hours
+                                                    ago</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="post-block-wrapper post-float">
+                                    <hr>
+                                @endforeach
+                                {{-- <div class="post-block-wrapper post-float">
                                     <div class="post-content">
                                         <h2 class="post-title title-sm">
                                             <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
@@ -216,7 +223,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
+                                <hr> --}}
+
+
                             </div>
                         </div>
                     </div>
@@ -233,23 +242,28 @@
                         <h3 class="news-title">
                             <span>ফিচার</span>
                         </h3>
+
                         <div class="row feature">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/3.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">‘চোখের সামনে সব পুড়ে গেল’</a>
-                                        </h2>
+
+                            @foreach ($popular_news as $popular_item)
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="post-block-wrapper clearfix">
+                                        <div class="post-thumbnail">
+                                            <a href="{{ route('news-details', $popular_item->slug) }}">
+                                                <img class="img-fluid" src="{{ asset($popular_item->image) }}"
+                                                    alt="post-thumbnail" />
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <h2 class="post-title mt-3">
+                                                <a
+                                                    href="{{ route('news-details', $popular_item->slug) }}">{{ $popular_item->title }}</a>
+                                            </h2>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                            @endforeach
+                            {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="post-block-wrapper clearfix">
                                     <div class="post-thumbnail">
                                         <a href="#">
@@ -325,8 +339,9 @@
                                         </h2>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -342,40 +357,47 @@
                         <h3 class="news-title">
                             <span>আন্তর্জাতিক</span>
                         </h3>
-                        <div class="post-overlay-wrapper clearfix">
-                            <div class="post-thumbnail">
-                                <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/10.png') }}"
-                                    alt="post-thumbnail" />
-                            </div>
+                        @foreach ($international_news as $key => $item)
+                            @if ($key == 0)
+                                <div class="post-overlay-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <img class="img-fluid" src="{{ asset($item->image) }}" alt="post-thumbnail" />
+                                    </div>
 
-                            <div class="post-content">
-                                <div class="post-meta white">
-                                    <span class="posted-time">
-                                        <a href="">পুতিন-কিম সাক্ষাৎ: আলোচনায় ইউক্রেন যুদ্ধ, সামরিক বিষয় ও
-                                            স্যাটেলাইট সহযোগিতা</a>
-                                    </span>
+                                    <div class="post-content">
+                                        <div class="post-meta white">
+                                            <span class="posted-time">
+                                                <a href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <hr>
+                                <hr>
+                            @endif
+                        @endforeach
 
                         <div class="post-list-block">
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-content">
-                                    <h5 class="title-sm">
-                                        <a href="#">মরক্কোয় ভূমিকম্প: মৃতের সংখ্যা ২ হাজার ছাড়াল</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="post-block-wrapper post-float clearfix">
+                            @foreach ($international_news as $key => $item)
+                                @if ($key > 0)
+                                    <div class="post-block-wrapper post-float clearfix">
+                                        <div class="post-content">
+                                            <h5 class="title-sm">
+                                                <a href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                @endif
+                            @endforeach
+
+                            {{-- <div class="post-block-wrapper post-float clearfix">
                                 <div class="post-content">
                                     <h5 class="title-sm">
                                         <a href="#">ইউক্রেনে যুক্তরাজ্যের চ্যালেঞ্জার ট্যাংক ধ্বংস করেছে রাশিয়া</a>
                                     </h5>
                                 </div>
                             </div>
-                            <hr>
+                            <hr> --}}
                         </div>
                     </div>
                 </div>
@@ -384,40 +406,39 @@
                         <h3 class="news-title">
                             <span>খেলাধুলা</span>
                         </h3>
-                        <div class="post-overlay-wrapper clearfix">
-                            <div class="post-thumbnail">
-                                <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/11.png') }}"
-                                    alt="post-thumbnail" />
-                            </div>
+                        @foreach ($sports_news as $key => $item)
+                            @if ($key == 0)
+                                <div class="post-overlay-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <img class="img-fluid" src="{{ asset($item->image) }}" alt="post-thumbnail" />
+                                    </div>
 
-                            <div class="post-content">
-                                <div class="post-meta white">
-                                    <span class="posted-time">
-                                        <a href="">ওয়ানডেতে ইংল্যান্ডের ব্যক্তিগত সর্বোচ্চ ইনিংসের রেকর্ড গড়লেন
-                                            স্টোকস</a>
-                                    </span>
+                                    <div class="post-content">
+                                        <div class="post-meta white">
+                                            <span class="posted-time">
+                                                <a href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <hr>
+                                <hr>
+                            @endif
+                        @endforeach
 
                         <div class="post-list-block">
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-content">
-                                    <h5 class="title-sm">
-                                        <a href="#">এশিয়া কাপ থেকে ছিটকে গেলেন নাসিম</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-content">
-                                    <h5 class="title-sm">
-                                        <a href="#">সিটিতে ফিরেছেন গার্দিওলা</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <hr>
+                            @foreach ($sports_news as $key => $item)
+                                @if ($key > 0)
+                                    <div class="post-block-wrapper post-float clearfix">
+                                        <div class="post-content">
+                                            <h5 class="title-sm">
+                                                <a
+                                                    href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -426,41 +447,40 @@
                         <h3 class="news-title">
                             <span>বিনোদন</span>
                         </h3>
-                        <div class="post-overlay-wrapper clearfix">
-                            <div class="post-thumbnail">
-                                <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/12.png') }}"
-                                    alt="post-thumbnail" />
-                            </div>
+                        @foreach ($entertainment_news as $key => $item)
+                            @if ($key == 0)
+                                <div class="post-overlay-wrapper clearfix">
+                                    <div class="post-thumbnail">
+                                        <img class="img-fluid" src="{{ asset($item->image) }}" alt="post-thumbnail" />
+                                    </div>
 
-                            <div class="post-content">
-                                <div class="post-meta white">
-                                    <span class="posted-time">
-                                        <a href="">৫ দিনেই ৫৫০ কোটি রুপি আয় ‘জওয়ান’ এর, শাহরুখকে শুভেচ্ছা জানালেন
-                                            অক্ষয়</a>
-                                    </span>
+                                    <div class="post-content">
+                                        <div class="post-meta white">
+                                            <span class="posted-time">
+                                                <a
+                                                    href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <hr>
+                                <hr>
+                            @endif
+                        @endforeach
 
                         <div class="post-list-block">
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-content">
-                                    <h5 class="title-sm">
-                                        <a href="#">চতুর্থবারেও ব্যর্থ! অবসরে যাচ্ছেন না হায়াও মিয়াজাকি</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-content">
-                                    <h5 class="title-sm">
-                                        <a href="#">১৮ বছর পর আসছে রোলিং স্টোনসের নতুন অ্যালবাম 'হ্যাকনি
-                                            ডায়মন্ডস'</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <hr>
+                            @foreach ($entertainment_news as $key => $item)
+                                @if ($key > 0)
+                                    <div class="post-block-wrapper post-float clearfix">
+                                        <div class="post-content">
+                                            <h5 class="title-sm">
+                                                <a
+                                                    href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -479,28 +499,32 @@
                         </h3>
                         <div class="news-style-one-slide">
 
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="" style="display: flex; justify-content: center">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/13.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content text-center">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
-                                                যে শিক্ষা দিলেন</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="post-author">
-                                                লেখক: বারখা দাত
-                                            </span>
+                            @foreach ($news as $item)
+                                <div class="item">
+                                    <div class="post-block-wrapper clearfix mb-5">
+                                        <div class="post-thumbnail">
+                                            <a href="{{ route('news-details', $item->slug) }}"
+                                                style="display: flex; justify-content: center">
+                                                <img class="img-fluid" src="{{ asset($item->image) }}" alt="post-image"
+                                                    style="height: 180px" />
+                                            </a>
+                                        </div>
+                                        <div class="post-content text-center">
+                                            <h2 class="post-title mt-3">
+                                                <a
+                                                    href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </h2>
+                                            <div class="post-meta mb-2">
+                                                {{-- <span class="post-author">
+                                                    লেখক: বারখা দাত
+                                                </span> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
+                            @endforeach
+
+                            {{-- <div class="item">
                                 <div class="post-block-wrapper clearfix mb-5">
                                     <div class="post-thumbnail">
                                         <a href="" style="display: flex; justify-content: center">
@@ -562,7 +586,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
 
@@ -582,22 +606,25 @@
                             <span>দেশজুড়ে</span>
                         </h3>
                         <div class="row feature">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/15.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">চট্টগ্রাম শহরে জলাবদ্ধতা: গন্ডগোলটা কোথায়?</a>
-                                        </h2>
+                            @foreach ($news as $item)
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="post-block-wrapper clearfix">
+                                        <div class="post-thumbnail">
+                                            <a href="{{ route('news-details', $item->slug) }}">
+                                                <img class="img-fluid" src="{{ asset($item->image) }}"
+                                                    alt="post-thumbnail" style="height: 180px;" />
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <h2 class="post-title mt-3">
+                                                <a
+                                                    href="{{ route('news-details', $item->slug) }}">{{ $item->title }}</a>
+                                            </h2>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                            @endforeach
+                            {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="post-block-wrapper clearfix">
                                     <div class="post-thumbnail">
                                         <a href="#">
@@ -721,7 +748,7 @@
                                         </h2>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

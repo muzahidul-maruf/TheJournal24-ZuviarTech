@@ -38,7 +38,7 @@
                             </li> --}}
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">আন্তর্জাতিক</a>
+                                <a class="nav-link" href="{{ route('international_news') }}">আন্তর্জাতিক</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">খেলাধুলা</a>

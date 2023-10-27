@@ -96,7 +96,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <button data-toggle="tooltip" data-placement="top" title="Delete"
-                                                            type="submit"
+                                                            type="submit" disabled
                                                             onclick="return confirm('Are you sure you want to delete?');"
                                                             type="button" class="btn btn-danger btn-xs mb-1">
                                                             <i class="fa fa-trash"></i> Delete
