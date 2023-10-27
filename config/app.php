@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        S1K3\Bangla\Date\BanglaDateServiceProvider::class,
 
         /*
          * Application Service Providers...
