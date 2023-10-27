@@ -17,14 +17,14 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h5 class="card-title">Edit Category Details</h5>
+                            <h5 class="card-title">Edit News Details</h5>
                             <div class="ml-auto">
-                                <a class="btn btn-sm btn-danger" href="{{ route('admin.news.category.index') }}"
+                                <a class="btn btn-sm btn-danger" href="{{ route('admin.news.index') }}"
                                     role="button">Back</a>
                             </div>
                         </div>
 
-                        <form action="{{ route('admin.news.category.update', $cat->id) }}" method="POST"
+                        <form action="{{ route('admin.news.update', $news->id) }}" method="POST"
                             enctype="multipart/form-data" class="add_form">
                             @csrf
                             @method('PUT')
@@ -33,15 +33,36 @@
                                 <div class="row">
 
                                     <div class="form-group col-md-6">
-                                        <label for="name">Name<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Enter name" value="{{ $cat->name }}" required>
-                                        @error('name')
+                                        <label for="title">Title<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            placeholder="Enter title" value="{{ $news->title }}" required>
+                                        @error('title')
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-3">
+                                        <label for="category_id">Category</label>
+                                        <select class="form-control select2bs4" style="width: 100%;" name="category_id"
+                                            id="category_id">
+                                            <option selected="selected">Select category</option>
+                                            @foreach ($all_cat as $item)
+                                                <option value="{{ $item->id }}"
+                                                    @if ($news->category_id == $item->id) selected @endif>{{ $item->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="writter">Writter<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="writter" name="writter"
+                                            placeholder="Enter writter" value="{{ $news->writter }}">
+                                        @error('writter')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-md-12">
                                         <label for="image">Image</label>
                                         <div class="input-group">
                                             <div class="custom-file">
@@ -56,8 +77,8 @@
                                         @enderror
 
 
-                                        @if ($cat->image)
-                                            <img src="{{ asset($cat->image) }}" alt="" class="mt-2"
+                                        @if ($news->image)
+                                            <img src="{{ asset($news->image) }}" alt="" class="mt-2"
                                                 style="height: 100px; width:100px; object-fit:cover;">
                                         @endif
                                     </div>
@@ -67,7 +88,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label for="description">Description</label>
-                                        <textarea class="form-control summernote" id="description" name="description" placeholder="Optional">{{ $cat->description }}</textarea>
+                                        <textarea class="form-control summernote" id="description" name="description" placeholder="Optional">{{ $news->description }}</textarea>
                                     </div>
                                 </div>
                             </div>

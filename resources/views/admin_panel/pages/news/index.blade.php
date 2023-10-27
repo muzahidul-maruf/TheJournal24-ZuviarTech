@@ -30,7 +30,7 @@
                                     <thead>
                                         <tr class="">
                                             <th>Image</th>
-                                            <th>Name</th>
+                                            <th>Title</th>
                                             {{-- <th>Description</th> --}}
                                             <th>Status</th>
                                             <th>Popular</th>
@@ -48,7 +48,7 @@
                                                     @endif
 
                                                 </td>
-                                                <td>{{ $data->name }}
+                                                <td>{{ $data->title }}
                                                 </td>
                                                 {{-- <td><span title="{!! $data->description !!}"
                                                         class="text-truncate table-truncate d-inline-block">{!! $data->description !!}
