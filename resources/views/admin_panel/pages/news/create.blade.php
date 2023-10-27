@@ -40,7 +40,7 @@
                                     </div>
 
                                     <div class="form-group col-md-3">
-                                        <label for="category_id">Category</label>
+                                        <label for="category_id">Category<span class="text-danger">*</span></label>
                                         <select class="form-control select2bs4" style="width: 100%;" name="category_id"
                                             id="category_id">
                                             <option selected="selected">Select category</option>
@@ -50,7 +50,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <label for="writter">Writter<span class="text-danger">*</span></label>
+                                        <label for="writter">Writter</label>
                                         <input type="text" class="form-control" id="writter" name="writter"
                                             placeholder="Enter writter" value="">
                                         @error('writter')
