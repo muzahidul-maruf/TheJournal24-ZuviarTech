@@ -29,6 +29,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MasterController::class, 'homePage'])->name('home-page');
 Route::get('/news/{slug}', [MasterController::class, 'newsDetails'])->name('news-details');
 Route::get('/international-news', [MasterController::class, 'international_news'])->name('international_news');
+Route::get('/sports-news', [MasterController::class, 'sports_news'])->name('sports_news');
+Route::get('/entertainment-news', [MasterController::class, 'entertainment_news'])->name('entertainment_news');
+Route::get('/feature-news', [MasterController::class, 'feature_news'])->name('feature_news');
+Route::get('/desh-jure-news', [MasterController::class, 'desh_jure_news'])->name('desh_jure_news');
+Route::get('/others-news', [MasterController::class, 'others_news'])->name('others_news');
 
 
 

@@ -31,7 +31,7 @@ class NewsController extends Controller
         //Validation
         $validated = $request->validate([
             'title' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
         $model = new News();
         $model->title = $request->title;

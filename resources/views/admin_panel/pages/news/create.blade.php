@@ -42,7 +42,7 @@
                                     <div class="form-group col-md-3">
                                         <label for="category_id">Category<span class="text-danger">*</span></label>
                                         <select class="form-control select2bs4" style="width: 100%;" name="category_id"
-                                            id="category_id">
+                                            id="category_id" required>
                                             <option selected="selected">Select category</option>
                                             @foreach ($all_cat as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>

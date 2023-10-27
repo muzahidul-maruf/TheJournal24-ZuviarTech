@@ -3,8 +3,8 @@
         <div class="row align-items-center">
 
             <div class="col-xs-12 col-sm-3 col-md-4">
-                <h5 class="text-white">বৃহস্পতিবার, ১৪ সেপ্টেম্বর ২০২৩ <br>
-                    ৩০ ভাদ্র ১৪৩০ বঙ্গাব্দ</h5>
+                <h5 class="text-white">{{ bangla_date(time(), 'en', 'd m y') }} <br>
+                    {{ bangla_date(time()) }}</h5>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-4">
                 <!-- Logo -->
@@ -19,7 +19,7 @@
 
 
                 <div class="top-ad-banner float-right">
-                    <a href="#">
+                    <a target="_blank" href="https://www.facebook.com/thejournal24">
                         <span class="social-icon">
                             <i class="fa-brands fa-facebook fa-2xl"></i>
                         </span>
@@ -29,7 +29,7 @@
                             <i class="fa-brands fa-twitter fa-2xl"></i>
                         </span>
                     </a>
-                    <a href="#">
+                    {{-- <a href="#">
                         <span class="social-icon">
                             <i class="fa-brands fa-instagram fa-2xl"></i>
                         </span>
@@ -38,7 +38,7 @@
                         <span class="social-icon">
                             <i class="fa-brands fa-youtube fa-2xl"></i>
                         </span>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
