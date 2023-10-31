@@ -1,6 +1,6 @@
 @extends('admin_panel.layout.master')
-@section('page_title', 'Categories')
-@section('news_menu_active', 'active')
+@section('page_title', 'Sub Categories')
+@section('news_subcategory_menu_active', 'active')
 @section('custom_style')
     <style>
 
@@ -17,10 +17,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h5 class="card-title">News List</h5>
+                            <h5 class="card-title">SubCategory List</h5>
                             <div class="ml-auto">
-                                <a class="btn btn-sm btn-info" href="{{ route('admin.news.create') }}" role="button">Create
-                                    new</a>
+                                <a class="btn btn-sm btn-info" href="{{ route('admin.news.subcategory.create') }}"
+                                    role="button">Create new</a>
                             </div>
                         </div>
                         <div style="overflow-x: auto">
@@ -30,15 +30,15 @@
                                     <thead>
                                         <tr class="">
                                             <th>Image</th>
-                                            <th>Title</th>
-                                            {{-- <th>Description</th> --}}
+                                            <th>Name</th>
+                                            <th>Category</th>
                                             <th>Status</th>
-                                            <th>Hero</th>
+                                            <th>Popular</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody style="color: #2474b2">
-                                        @foreach ($all_news as $data)
+                                        @foreach ($all_sub_cat as $data)
                                             <tr>
                                                 <td>
 
@@ -48,35 +48,35 @@
                                                     @endif
 
                                                 </td>
-                                                <td>{{ $data->title }}
+                                                <td>{{ $data->name }}
                                                 </td>
-                                                {{-- <td><span title="{!! $data->description !!}"
-                                                        class="text-truncate table-truncate d-inline-block">{!! $data->description !!}
-                                                    </span>
-                                                </td> --}}
+                                                <td>{{ optional($data->category)->name ?? '' }}
+                                                </td>
                                                 <td>
                                                     @if ($data->status == 1)
-                                                        <a href="{{ route('admin.news.status-update', $data->id) }}">
+                                                        <a
+                                                            href="{{ route('admin.news.subcategory.status-update', $data->id) }}">
                                                             <button class="btn btn-success btn-xs"
                                                                 style="width:80px">Active</button>
                                                         </a>
                                                     @elseif ($data->status == 0)
-                                                        <a href="{{ route('admin.news.status-update', $data->id) }}">
+                                                        <a
+                                                            href="{{ route('admin.news.subcategory.status-update', $data->id) }}">
                                                             <button class="btn btn-danger btn-xs"
                                                                 style="width:80px">In-active</button>
                                                         </a>
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if ($data->is_hero == 1)
+                                                    @if ($data->is_popular == 1)
                                                         <a
-                                                            href="{{ route('admin.news.hero-status-update', $data->id) }}">
+                                                            href="{{ route('admin.news.subcategory.popularity-status-update', $data->id) }}">
                                                             <button class="btn btn-success btn-xs"
                                                                 style="width:80px">Yes</button>
                                                         </a>
-                                                    @elseif ($data->is_hero == 0)
+                                                    @elseif ($data->is_popular == 0)
                                                         <a
-                                                            href="{{ route('admin.news.hero-status-update', $data->id) }}">
+                                                            href="{{ route('admin.news.subcategory.popularity-status-update', $data->id) }}">
                                                             <button class="btn btn-danger btn-xs"
                                                                 style="width:80px">No</button>
                                                         </a>
@@ -84,17 +84,17 @@
                                                 </td>
                                                 <td>
                                                     <a data-toggle="tooltip" data-placement="top" title="Edit"
-                                                        href="{{ route('admin.news.edit', $data->id) }}" type="button"
-                                                        class="btn btn-warning btn-xs mb-1">
+                                                        href="{{ route('admin.news.subcategory.edit', $data->id) }}"
+                                                        type="button" class="btn btn-warning btn-xs mb-1">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
                                                     <form class="d-inline"
-                                                        action="{{ route('admin.news.destroy', $data->id) }}"
+                                                        action="{{ route('admin.news.subcategory.destroy', $data->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button data-toggle="tooltip" data-placement="top" title="Delete"
-                                                            type="submit"
+                                                            type="submit" disabled
                                                             onclick="return confirm('Are you sure you want to delete?');"
                                                             type="button" class="btn btn-danger btn-xs mb-1">
                                                             <i class="fa fa-trash"></i> Delete

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\MasterController as AdminMasterController;
 use App\Http\Controllers\Admin\NewsCategoryController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\NewsSubCategoryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\MasterController;
 use Illuminate\Support\Facades\Hash;
@@ -50,6 +51,7 @@ Route::group(['middleware' => 'admin_auth_middleware'], function () {
         Route::name('admin.')->group(function () {
             Route::group(['prefix' => '/news'], function () {
                 Route::name('news.')->group(function () {
+
                     Route::name('category.')->group(function () {
                         Route::group(['prefix' => '/category'], function () {
                             Route::get('/', [NewsCategoryController::class, 'index'])->name('index');
@@ -63,14 +65,29 @@ Route::group(['middleware' => 'admin_auth_middleware'], function () {
                         });
                     });
 
+                    Route::name('subcategory.')->group(function () {
+                        Route::group(['prefix' => '/sub-category'], function () {
+                            Route::get('/', [NewsSubCategoryController::class, 'index'])->name('index');
+                            Route::get('/create', [NewsSubCategoryController::class, 'create'])->name('create');
+                            Route::post('/store', [NewsSubCategoryController::class, 'store'])->name('store');
+                            Route::get('/edit/{id}', [NewsSubCategoryController::class, 'edit'])->name('edit');
+                            Route::put('/update/{id}', [NewsSubCategoryController::class, 'update'])->name('update');
+                            Route::delete('/destroy/{id}', [NewsSubCategoryController::class, 'destroy'])->name('destroy');
+                            Route::get('/status-update/{id}', [NewsSubCategoryController::class, 'statusUpdate'])->name('status-update');
+                            Route::get('/popularity-status-update/{id}', [NewsSubCategoryController::class, 'popularitystatusUpdate'])->name('popularity-status-update');
+                        });
+                    });
+
                     Route::get('/', [NewsController::class, 'index'])->name('index');
                     Route::get('/create', [NewsController::class, 'create'])->name('create');
                     Route::post('/store', [NewsController::class, 'store'])->name('store');
                     Route::get('/edit/{id}', [NewsController::class, 'edit'])->name('edit');
                     Route::put('/update/{id}', [NewsController::class, 'update'])->name('update');
                     Route::delete('/destroy/{id}', [NewsController::class, 'destroy'])->name('destroy');
-                    Route::get('/category/status-update/{id}', [NewsController::class, 'statusUpdate'])->name('status-update');
-                    Route::get('/category/popularity-status-update/{id}', [NewsController::class, 'popularitystatusUpdate'])->name('popularity-status-update');
+                    Route::get('/status-update/{id}', [NewsController::class, 'statusUpdate'])->name('status-update');
+                    Route::get('/hero-status-update/{id}', [NewsController::class, 'herostatusUpdate'])->name('hero-status-update');
+
+                    Route::get('/cat-wise-subcat/{cat_id}', [NewsController::class, 'cat_wise_subCat'])->name('cat_wise_subcat');
                 });
             });
         });
