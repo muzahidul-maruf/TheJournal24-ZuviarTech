@@ -4,58 +4,53 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\News;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class NewsController extends Controller
+class NewsSubCategoryController extends Controller
 {
 
     public function index()
     {
 
-        $all_news = News::latest()->get();
-        return view('admin_panel/pages/news/index', compact(['all_news']));
+        $all_sub_cat = Subcategory::with(['category'])->latest()->get();
+        return view('admin_panel/pages/sub_category/index', compact(['all_sub_cat']));
     }
 
 
     public function create()
     {
         $all_cat = Category::where('status', 1)->latest()->get();
-        $all_subcat = Subcategory::where('status', 1)->latest()->get();
-        return view('admin_panel/pages/news/create', compact(['all_cat', 'all_subcat']));
+        return view('admin_panel/pages/sub_category/create', compact(['all_cat']));
     }
-
 
     public function store(Request $request)
     {
         //Validation
         $validated = $request->validate([
-            'title' => 'required',
-            // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'name' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
-        $model = new News();
-        $model->title = $request->title;
-        $slug = Str::slug($request->title);
+        $model = new Subcategory();
+        $model->name = $request->name;
+        $model->category_id = $request->category_id;
+        $slug = Str::slug($request->name);
         //check slug
-        $checkSlug = News::where('slug', $slug)->count();
+        $checkSlug = Subcategory::where('slug', $slug)->count();
 
         if ($checkSlug > 0) {
             $slug = time() . '-' . $slug;
         }
 
         $model->slug = $slug;
-        $model->category_id = $request->category_id;
-        $model->subcategory_id = $request->subcategory_id;
-        $model->writter = $request->writter;
         $model->description = $request->description;
 
         //image upload
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $new_name = time() . '.' . $request->image->getClientOriginalExtension();
-            $path = '/common/images/news/';
+            $path = '/common/images/product_cat/subcat/';
             $image->move(public_path($path), $new_name);
             $model->image = $path . $new_name;
         }
@@ -72,13 +67,9 @@ class NewsController extends Controller
     {
         $all_cat = Category::latest()->get();
 
-
-
-        $news = News::with(['category'])->where('id', $id)->first();
-
-        if ($news) {
-            $all_subcat = Subcategory::where('category_id', $news->category_id)->latest()->get();
-            return view('admin_panel/pages/news/edit', compact('news', 'all_cat', 'all_subcat'));
+        $subcat = Subcategory::where('id', $id)->first();
+        if ($subcat) {
+            return view('admin_panel/pages/sub_category/edit', compact(['subcat', 'all_cat']));
         }
         return abort(404);
     }
@@ -89,24 +80,22 @@ class NewsController extends Controller
 
         //Validation
         $validated = $request->validate([
-            'title' => 'required|unique:news,title,' . $id,
+            'name' => 'required|unique:categories,name,' . $id,
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
-        $model = News::find($id);
+        $model = Subcategory::find($id);
 
-        $model->title = $request->title;
-        $slug = Str::slug($request->title);
+        $model->name = $request->name;
+        $model->category_id = $request->category_id;
+        $slug = Str::slug($request->name);
         //check slug
-        $checkSlug = News::where('slug', $slug)->where('id', '!=', $id)->count();
+        $checkSlug = Subcategory::where('slug', $slug)->where('id', '!=', $id)->count();
 
         if ($checkSlug > 0) {
             $slug = time() . '-' . $slug;
         }
 
         $model->slug = $slug;
-        $model->category_id = $request->category_id;
-        $model->subcategory_id = $request->subcategory_id;
-        $model->writter = $request->writter;
         $model->description = $request->description;
 
 
@@ -121,19 +110,19 @@ class NewsController extends Controller
             }
             $image = $request->file('image');
             $new_name = time() . '.' . $request->image->getClientOriginalExtension();
-            $path = '/common/images/news/';
+            $path = '/common/images/product_cat/subcat/';
             $image->move(public_path($path), $new_name);
             $model->image = $path . $new_name;
         }
 
         $model->save();
 
-        return redirect()->route('admin.news.index')->with('message', 'Update Successful.');
+        return redirect()->route('admin.news.subcategory.index')->with('message', 'Update Successful.');
     }
 
     public function destroy($id)
     {
-        $model = News::find($id);
+        $model = Subcategory::find($id);
 
         if ($model) {
             //remove old image form folder if new image comes
@@ -150,7 +139,7 @@ class NewsController extends Controller
     }
     public function statusUpdate($id)
     {
-        $model = News::find($id);
+        $model = Subcategory::find($id);
 
         if ($model) {
             ($model->status == 1) ? $model->status = 0 : $model->status = 1;
@@ -158,30 +147,14 @@ class NewsController extends Controller
             return redirect()->back()->with('message', 'Status update successful.');
         }
     }
-    public function herostatusUpdate($id)
+    public function popularitystatusUpdate($id)
     {
-        $model = News::find($id);
+        $model = Subcategory::find($id);
 
         if ($model) {
-            ($model->is_hero == 1) ? $model->is_hero = 0 : $model->is_hero = 1;
+            ($model->is_popular == 1) ? $model->is_popular = 0 : $model->is_popular = 1;
             $model->save();
-            return redirect()->back()->with('message', 'Status changed.');
-        }
-    }
-
-    public function cat_wise_subCat($cat_id)
-    {
-        $subcat = Subcategory::where('category_id', $cat_id)->latest()->get();
-        if ($subcat) {
-            return response()->json([
-                'status' => 200,
-                'data' => $subcat,
-            ]);
-        } else {
-            return response()->json([
-                'status' => 404,
-                'message' => "Not Found.",
-            ]);
+            return redirect()->back()->with('message', 'Popularity status changed.');
         }
     }
 }

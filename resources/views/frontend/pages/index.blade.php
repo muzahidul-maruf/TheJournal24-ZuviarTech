@@ -49,113 +49,40 @@
                             <span>সংবাদ</span>
                         </h3>
                         <div class="news-style-one-slide">
-                            @foreach ($news as $news_item)
-                                <div class="item">
-                                    <div class="post-block-wrapper clearfix mb-5">
-                                        <div class="post-content">
-                                            <h2 class="post-title mt-3">
-                                                <a
-                                                    href="{{ route('news-details', $news_item->slug) }}">{{ $news_item->title }}</a>
-                                            </h2>
-                                            <div class="post-meta mb-2">
-                                                <span class="posted-time"><i class="fa fa-clock-o mr-2"></i> 
-                                                    {{ $news_item->created_at->diffForHumans() }}
-                                                    |</span>
-                                                <span class="post-author">
-                                                    বাংলাদেশ
-                                                </span>
+                            @foreach ($latest_hero_news as $news_item)
+                                @if (!$loop->first)
+                                    <div class="item">
+                                        <div class="post-block-wrapper clearfix mb-5">
+                                            <div class="post-content">
+                                                <h2 class="post-title mt-3">
+                                                    <a
+                                                        href="{{ route('news-details', $news_item->slug) }}">{{ $news_item->title }}</a>
+                                                </h2>
+                                                <div class="post-meta mb-2">
+                                                    <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>
+                                                        {{ $news_item->created_at->diffForHumans() }}
+                                                        |</span>
+                                                    <span class="post-author">
+                                                        বাংলাদেশ
+                                                    </span>
+                                                </div>
+                                                <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে
+                                                    পানির
+                                                    সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
                                             </div>
-                                            <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে পানির
-                                                সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="{{ route('news-details', $news_item->slug) }}">
-                                                <img class="img-fluid" src="{{ asset($news_item->image) }}" alt="post-image"
-                                                    style="height: 180px;" />
-                                            </a>
+                                            <div class="post-thumbnail">
+                                                <a href="{{ route('news-details', $news_item->slug) }}">
+                                                    <img class="img-fluid" src="{{ asset($news_item->image) }}"
+                                                        alt="post-image" style="height: 180px;" />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             @endforeach
 
 
-                            {{-- <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">কৃষি মার্কেটে অগ্নিকাণ্ডে ২১৭ দোকান ক্ষতিগ্রস্ত হয়েছে:
-                                                ডিএনসিসি</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
-                                                |</span>
-                                            <span class="post-author">
-                                                বাংলাদেশ
-                                            </span>
-                                        </div>
-                                        <p>ব্যবসায়ীরা দাবি করেন বৈধ-অবৈধ মিলিয়ে মার্কেটে ৩৫০টি দোকান রয়েছে। তবে ডিএনসিসির
-                                            নির্বাহী কর্মকর্তা সেলিম রেজার মতে, ৩১৭টি দোকান বরাদ্দ ছিল, যার মধ্যে ২১৭টি
-                                            ক্ষতিগ্রস্ত হয়েছে।</p>
-                                    </div>
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/2.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">‘আগুন নেভানোয় সবচেয়ে বেশি বেগ পেতে হয়েছে পানি ও উৎসুক জনতা
-                                                নিয়ে’</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
-                                                |</span>
-                                            <span class="post-author">
-                                                বাংলাদেশ
-                                            </span>
-                                        </div>
-                                        <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে পানির
-                                            সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
-                                    </div>
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/1.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">কৃষি মার্কেটে অগ্নিকাণ্ডে ২১৭ দোকান ক্ষতিগ্রস্ত হয়েছে:
-                                                ডিএনসিসি</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-2"></i>৪৫ মিনিট আগে
-                                                |</span>
-                                            <span class="post-author">
-                                                বাংলাদেশ
-                                            </span>
-                                        </div>
-                                        <p>ব্যবসায়ীরা দাবি করেন বৈধ-অবৈধ মিলিয়ে মার্কেটে ৩৫০টি দোকান রয়েছে। তবে ডিএনসিসির
-                                            নির্বাহী কর্মকর্তা সেলিম রেজার মতে, ৩১৭টি দোকান বরাদ্দ ছিল, যার মধ্যে ২১৭টি
-                                            ক্ষতিগ্রস্ত হয়েছে।</p>
-                                    </div>
-                                    <div class="post-thumbnail">
-                                        <a href="single-post.htm">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/2.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> --}}
+
                         </div>
                     </div>
 
@@ -188,47 +115,7 @@
                                     </div>
                                     <hr>
                                 @endforeach
-                                {{-- <div class="post-block-wrapper post-float">
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
-                                                বিক্ষোভ</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 15 March ,
-                                                2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
 
-                                <div class="post-block-wrapper post-float">
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
-                                                বিক্ষোভ</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 15 March ,
-                                                2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-
-                                <div class="post-block-wrapper post-float">
-                                    <div class="post-content">
-                                        <h2 class="post-title title-sm">
-                                            <a href="#">আগারগাঁওয়ে সড়ক অবরোধ করে কৃষি বিশ্ববিদ্যালয় শিক্ষার্থীদের
-                                                বিক্ষোভ</a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <span class="posted-time"><i class="fa fa-clock-o mr-1"></i> 15 March ,
-                                                2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr> --}}
 
 
                             </div>
@@ -250,7 +137,7 @@
 
                         <div class="row feature">
 
-                            @foreach ($popular_news as $popular_item)
+                            @foreach ($featured_news as $popular_item)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail">
@@ -268,83 +155,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{-- <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/4.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">সরকার সমর্থক ‘প্রগতিশীল ইসলামী জোটের’ আত্মপ্রকাশ</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/5.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">বিচারকের সই-সিল জাল করে গ্রেপ্তারি পরোয়ানা,
-                                                ‘উদ্দেশ্য হয়রানি’</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/6.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">কেন স্যালাইনের এতো সংকট!</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/7.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">লিবিয়ায় ‘ড্যানিয়েল’ ঝড়ের আঘাতে ৬ বাংলাদেশি নিহত</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/8.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">অবিলম্বে জ্বালানি তেলের বর্ধিত মূল্য প্রত্যাহারের দাবি যাত্রী
-                                                কল্যাণ সমিতির</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div> --}}
+
                         </div>
 
                     </div>
@@ -394,15 +205,6 @@
                                     <hr>
                                 @endif
                             @endforeach
-
-                            {{-- <div class="post-block-wrapper post-float clearfix">
-                                <div class="post-content">
-                                    <h5 class="title-sm">
-                                        <a href="#">ইউক্রেনে যুক্তরাজ্যের চ্যালেঞ্জার ট্যাংক ধ্বংস করেছে রাশিয়া</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <hr> --}}
                         </div>
                     </div>
                 </div>
@@ -500,11 +302,11 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="news-style-one">
                         <h3 class="news-title">
-                            <span>সংবাদ</span>
+                            <span>মতামত</span>
                         </h3>
                         <div class="news-style-one-slide">
 
-                            @foreach ($news as $item)
+                            @foreach ($motamot_news as $item)
                                 <div class="item">
                                     <div class="post-block-wrapper clearfix mb-5">
                                         <div class="post-thumbnail">
@@ -528,71 +330,6 @@
                                     </div>
                                 </div>
                             @endforeach
-
-                            {{-- <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="" style="display: flex; justify-content: center">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/11.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content text-center">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
-                                                যে শিক্ষা দিলেন</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="post-author">
-                                                লেখক: বারখা দাত
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="" style="display: flex; justify-content: center">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/14.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content text-center">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
-                                                যে শিক্ষা দিলেন</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="post-author">
-                                                লেখক: বারখা দাত
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="post-block-wrapper clearfix mb-5">
-                                    <div class="post-thumbnail">
-                                        <a href="" style="display: flex; justify-content: center">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/10.png') }}"
-                                                alt="post-image" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content text-center">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">ভারতের সফল মহাকাশ মিশনের অখ্যাত নায়কেরা ‘মেধা পাচার’ বন্ধের
-                                                যে শিক্ষা দিলেন</a>
-                                        </h2>
-                                        <div class="post-meta mb-2">
-                                            <span class="post-author">
-                                                লেখক: বারখা দাত
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-
                         </div>
 
                     </div>
@@ -611,7 +348,7 @@
                             <span>দেশজুড়ে</span>
                         </h3>
                         <div class="row feature">
-                            @foreach ($news as $item)
+                            @foreach ($desh_jure_news as $item)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="post-block-wrapper clearfix">
                                         <div class="post-thumbnail">
@@ -629,131 +366,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{-- <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/16.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">টাঙ্গাইলে দলিল জাল করে জমি কেনাবেচা করায় চার চিকিৎসকসহ ১০ জন
-                                                কারাগারে</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/17.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">আখাউড়া-আগরতলা রেলপথে পরীক্ষামূলক ট্রেন চলবে আগামীকাল</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/18.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">নারায়ণগঞ্জে ফ্ল্যাটে আগুন, ব়্যাব সদস্যসহ দগ্ধ ২</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/19.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">ছাত্রলীগের বিরুদ্ধে স্বাস্থ্য কমপ্লেক্সের ২ কর্মীকে মারধরের
-                                                অভিযোগ</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/20.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">আখাউড়া-আগরতলা রেলপথে পরীক্ষামূলক ট্রেন চলবে আগামীকাল</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/21.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">যান্ত্রিক ত্রুটি সারাইয়ের পর আবারও উৎপাদনে ফিরল রামপাল
-                                                তাপবিদ্যুৎকেন্দ্র</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/22.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">চট্টগ্রামে বিএনপি কার্যালয়ে হামলার ঘটনায় মামলা না নেওয়ার
-                                                অভিযোগ</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/23.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">ইটিটি কক্ষের সামনে দুই পক্ষের মধ্যে মারামারি হয়: বারডেমের
-                                                নিরাপত্তা কর্মকর্তা</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>

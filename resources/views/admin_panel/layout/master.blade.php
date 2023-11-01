@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title> The Journal 24</title>
     {{-- <link rel="icon" type="image/x-icon" href="{{ asset('common/fav.png') }}"> --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('common/favicon.png') }}">
@@ -13,7 +14,8 @@
     <!-- Font Awesome Icons -->
     {{-- <link rel="stylesheet" href="{{ asset('backend_assets/plugins/fontawesome-free/css/all.min.css') }}"> --}}
     <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('backend_assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('backend_assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backend_assets/plugins/daterangepicker/daterangepicker.css') }}">
     <link rel="stylesheet"
@@ -120,7 +122,15 @@
                             <a href="{{ route('admin.news.category.index') }}" class="nav-link @yield('news_category_menu_active')">
                                 <i class="nav-icon fa-solid fa-grip-lines"></i>
                                 <p>
-                                    News Category
+                                    Category
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.news.subcategory.index') }}" class="nav-link @yield('news_subcategory_menu_active')">
+                                <i class="nav-icon fa-solid fa-grip-lines"></i>
+                                <p>
+                                    Sub Category
                                 </p>
                             </a>
                         </li>
