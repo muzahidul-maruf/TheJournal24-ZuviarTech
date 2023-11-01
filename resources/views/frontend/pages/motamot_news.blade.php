@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
-@section('international_news_menu_active', 'active')
+@section('motamot_news_menu_active', 'active')
 @section('page_title')
-    | আন্তর্জাতিক
+    | মতামত
 @endsection
 
 @section('custom_css')
@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="news-style-two pt-3">
                         <div class="row feature">
-                            @foreach ($international_news as $key => $item)
+                            @foreach ($motamot_news as $key => $item)
                                 @if ($key == 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
@@ -35,7 +35,7 @@
                                     </div>
                                 @endif
                             @endforeach
-                            @foreach ($international_news as $key => $item)
+                            @foreach ($motamot_news as $key => $item)
                                 @if ($key > 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
@@ -60,7 +60,7 @@
                     </div>
                     <nav aria-label="Page navigation pagination-wrapper" class="pagination-wrapper">
                         <div class="pagination justify-content-center">
-                            {!! $international_news->links() !!}
+                            {!! $motamot_news->links() !!}
                         </div>
                     </nav>
                 </div>
@@ -76,7 +76,7 @@
 
                 <div class="col-lg-9">
                     <div class="post-list-block">
-                        @foreach ($international_news as $key => $item)
+                        @foreach ($motamot_news as $key => $item)
                             @if ($key > 0)
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-content">
@@ -88,15 +88,6 @@
                                 <hr>
                             @endif
                         @endforeach
-
-                        {{-- <div class="post-block-wrapper post-float clearfix">
-                            <div class="post-content">
-                                <h5 class="title-sm">
-                                    <a href="#">ইউক্রেনে যুক্তরাজ্যের চ্যালেঞ্জার ট্যাংক ধ্বংস করেছে রাশিয়া</a>
-                                </h5>
-                            </div>
-                        </div>
-                        <hr> --}}
                     </div>
                 </div>
 

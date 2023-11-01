@@ -4,7 +4,8 @@
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg site-main-nav navigation">
                     <a class="navbar-brand d-lg-none" href="/">
-                        <img style="height: 80px" src="{{ asset('necessary_assets/pics/header_logo.png') }}" alt="">
+                        <img style="height: 80px" src="{{ asset('necessary_assets/pics/header_logo.png') }}"
+                            alt="">
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -38,28 +39,30 @@
                             </li> --}}
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home-page') }}">বাংলাদেশ</a>
+                                <a class="@yield('home_menu_active') nav-link" href="{{ route('home-page') }}">বাংলাদেশ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('international_news') }}">আন্তর্জাতিক</a>
+                                <a class="@yield('international_news_menu_active') nav-link"
+                                    href="{{ route('international_news') }}">আন্তর্জাতিক</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('sports_news') }}">খেলাধুলা</a>
+                                <a class="@yield('sports_news_menu_active') nav-link" href="{{ route('sports_news') }}">খেলাধুলা</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('entertainment_news') }}">বিনোদন</a>
+                                <a class="@yield('entertainment_news_menu_active') nav-link"
+                                    href="{{ route('entertainment_news') }}">বিনোদন</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('feature_news') }}">ফিচার</a>
+                                <a class="@yield('feature_news_menu_active') nav-link" href="{{ route('feature_news') }}">ফিচার</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('desh_jure_news') }}">দেশজুড়ে</a>
+                                <a class="@yield('desh_jure_news_menu_active') nav-link" href="{{ route('desh_jure_news') }}">দেশজুড়ে</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">মতামত</a>
+                                <a class="@yield('motamot_news_menu_active') nav-link" href="{{ route('motamot_news') }}">মতামত</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('others_news') }}">অন্যান্য</a>
+                                <a class="@yield('others_news_menu_active') nav-link" href="{{ route('others_news') }}">অন্যান্য</a>
                             </li>
 
                         </ul>

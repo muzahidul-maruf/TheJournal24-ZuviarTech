@@ -40,16 +40,46 @@
 
                     <div class="comment ">
                         <div class="col-md-12">
-                            <h3 class="text-right">০ টি মন্তব্য</h3>
+                            @if ($feedbacks_count > 0)
+                                <h3 class="text-right">{{ $feedbacks_count }} টি মন্তব্য</h3>
+                            @else
+                                <h3 class="text-right">০ টি মন্তব্য</h3>
+                            @endif
+
                         </div>
+                        @if ($feedbacks != null)
+                            <div class="col-md-12">
+                                @foreach ($feedbacks as $item)
+                                    <div class="row">
+                                        <div class="col-2 d-none d-md-block">
+                                            {{-- <img src="{{ asset('necessary_assets/images/news/user-1.png') }}"
+                                                alt=""> --}}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" name="feedback" id="" rows="2" required disabled readonly>{{ $item->feedback }}</textarea>
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                @endforeach
+                            </div>
+                        @endif
+
+
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-2 d-none d-md-block">
                                     <img src="{{ asset('necessary_assets/images/news/user-1.png') }}" alt="">
                                 </div>
                                 <div class="col-md-10">
-                                    <textarea class="form-control" name="" id="" rows="4" placeholder="একটি মন্তব্য যোগ করুন..."></textarea>
-                                    <button class="btn btn-primary mt-4" type="button">পোস্ট করুন</button>
+                                    <form action="{{ route('store_feedback') }}" method="POST"
+                                        enctype="multipart/form-data" class="">
+                                        @csrf
+                                        <input type="hidden" name="news_id" id="" value="{{ $news_details->id }}">
+                                        <textarea class="form-control" name="feedback" id="" rows="4" required
+                                            placeholder="একটি মন্তব্য যোগ করুন..."></textarea>
+                                        <button class="btn btn-primary mt-4" type="submit">পোস্ট করুন</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -97,12 +127,10 @@
                                                     {{ $item->title }}
                                                 </a>
                                             </h2>
-
                                         </div>
                                     </div>
                                     <hr>
                                 @endforeach
-
                             </div>
                         </div>
                     </div>
@@ -138,92 +166,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{-- <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/f2.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">
-                                                কৃষি মার্কেটের ব্যবসায়ীদের ঘুরে দাঁড়ানোর জন্য সরকার সর্বাত্মক চেষ্টা করবে:
-                                                কৃষিমন্ত্রী
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/f3.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">
-                                                ঋণে জর্জরিত কৃষি মার্কেটের ব্যবসায়ীরা আগের মতো ব্যবসা করতে চান
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/f4.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">
-                                                মোহাম্মদপুর কৃষি মার্কেটে অগ্নিকাণ্ডের ঘটনায় ৫ সদস্যের তদন্ত কমিটি
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/f5.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">
-                                                অগ্নিকাণ্ডে কৃষি মার্কেটের দুই শতাধিক দোকান পুড়ে গেছে: ডিএনসিসি সিইও
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="post-block-wrapper clearfix">
-                                    <div class="post-thumbnail">
-                                        <a href="#">
-                                            <img class="img-fluid" src="{{ asset('necessary_assets/pics/news/f6.png') }}"
-                                                alt="post-thumbnail" />
-                                        </a>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title mt-3">
-                                            <a href="#">
-                                                কৃষি মার্কেটে আগুন: আধপোড়া চালও ১৮০ টাকা বস্তা
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
