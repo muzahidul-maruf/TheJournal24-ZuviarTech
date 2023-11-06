@@ -63,12 +63,12 @@
                                                         {{ $news_item->created_at->diffForHumans() }}
                                                         |</span>
                                                     <span class="post-author">
-                                                        বাংলাদেশ
+                                                        {{ optional($news_item->category)->name }}
                                                     </span>
                                                 </div>
-                                                <p>আমরা সব থেকে বেশি বেগ পেয়েছি পানির সোর্স নিয়ে। এখানে বিভিন্ন বিল্ডিংয়ে
-                                                    পানির
-                                                    সোর্স রয়েছে কিন্তু পর্যাপ্ত নয়।</p>
+                                                <p>
+                                                    {!! \Illuminate\Support\Str::words($news_item->description, 50, '....') !!}
+                                                </p>
                                             </div>
                                             <div class="post-thumbnail">
                                                 <a href="{{ route('news-details', $news_item->slug) }}">
