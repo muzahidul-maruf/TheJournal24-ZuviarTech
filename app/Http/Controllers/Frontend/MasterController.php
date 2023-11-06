@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -39,7 +40,9 @@ class MasterController extends Controller
     public function international_news()
     {
         $international_news = News::where('category_id', 2)->get();
-        return view('frontend.pages.international_news', compact(['international_news']));
+        $sub_cat_news = Subcategory::whereHas('news')->with(['news'])->where('category_id', 2)->get();
+        // return $sub_cat_news;
+        return view('frontend.pages.international_news', compact(['international_news','sub_cat_news']));
     }
     public function sports_news()
     {
