@@ -46,7 +46,7 @@ class MasterController extends Controller
     public function international_news()
     {
 
-        $international_news = News::where('category_id', 2)->get();
+        $international_news = News::where('category_id', 2)->paginate(12);
         $sub_cat_news = Subcategory::whereHas('news')->with(['news'])->where('category_id', 2)->get();
         // return $sub_cat_news;
         $most_readed_news = News::orderBy('read_count', 'desc')->take(6)->get();
