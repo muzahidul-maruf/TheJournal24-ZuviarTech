@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
 @section('feature_news_menu_active', 'active')
 @section('page_title')
-     | ফিচার
+    | ফিচার
 @endsection
 
 @section('custom_css')
@@ -20,20 +20,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="news-style-two pt-3">
-                        {{-- <h3 class="news-title">
-                            <span>দেশজুড়ে</span>
-                        </h3> --}}
                         <div class="row feature">
                             @foreach ($feature_news as $key => $item)
                                 @if ($key == 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
-                                            {{-- <div class="post-thumbnail">
-                                                <a href="{{ route('news-details', $item->slug) }}">
-                                                    <img class="img-fluid" src="{{ asset($item->image) }}"
-                                                        alt="post-thumbnail" style="height: 180px;" />
-                                                </a>
-                                            </div> --}}
                                             <div class="post-content">
                                                 <h2 class="post-title mt-3">
                                                     <a
@@ -67,6 +58,11 @@
 
                         </div>
                     </div>
+                    <nav aria-label="Page navigation pagination-wrapper" class="pagination-wrapper">
+                        <div class="pagination justify-content-center">
+                            {!! $feature_news->links() !!}
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -92,15 +88,6 @@
                                 <hr>
                             @endif
                         @endforeach
-
-                        {{-- <div class="post-block-wrapper post-float clearfix">
-                            <div class="post-content">
-                                <h5 class="title-sm">
-                                    <a href="#">ইউক্রেনে যুক্তরাজ্যের চ্যালেঞ্জার ট্যাংক ধ্বংস করেছে রাশিয়া</a>
-                                </h5>
-                            </div>
-                        </div>
-                        <hr> --}}
                     </div>
                 </div>
 
@@ -112,7 +99,7 @@
                                 <span>সর্বাধিক পঠিত</span>
                             </h3>
                             <div class="post-list-block">
-                                @foreach ($feature_news as $item)
+                                @foreach ($most_readed_news as $item)
                                     <div class="post-block-wrapper post-float ">
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-4 text-center">
                 <p class="footer-primary-color">Email</p>
-                <p class="footer-primary-color">example@journal24.com</p>
+                <p class="footer-primary-color">info@journal24.com</p>
             </div>
             <div class="col-md-4 text-center">
 

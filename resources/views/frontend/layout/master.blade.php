@@ -30,101 +30,34 @@
         rel="stylesheet">
     <!-- manin stylesheet -->
     <link rel="stylesheet" href="{{ asset('necessary_assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     <style>
+        #navbarSupportedContent a.active {
+            color: #dc3545;
+        }
 
+        .page-item.active .page-link {
+            z-index: 1;
+            color: #fff;
+            border-radius: 3px;
+            background-color: #013545;
+            border-color: #013545;
+            margin-right: 8px;
+            padding: 10px 16px
+        }
+
+        .page-item:first-child .page-link {
+            margin-left: 0;
+            border-radius: 3px;
+            margin-right: 8px;
+            padding: 10px 16px;
+        }
     </style>
 
     @yield('custom_css')
 </head>
 
 <body>
-
-    {{-- <div class="trending-bar-dark hidden-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="trending-bar-title">Trending News</h3>
-                    <div class="trending-news-slider">
-                        <div class="item">
-                            <div class="post-content">
-                                <h2 class="post-title title-sm">
-                                    <a href="single-post.html">Ex-Googler warns coding bootcamps are lacking</a>
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="post-content">
-                                <h2 class="post-title title-sm">
-                                    <a href="single-post.html">Intel’s new smart glasses actually look good</a>
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="post-content">
-                                <h2 class="post-title title-sm">
-                                    <a href="single-post.html">Here's How To Get Free Pizza On 2 hour</a>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-12 col-sm-12 col-xs-12 top-nav-social-lists text-lg-right col-lg-4 ml-lg-auto">
-                    <ul class="list-unstyled mt-4 mt-lg-0">
-                        <li>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-facebook-f"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-twitter"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-google-plus"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-youtube"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-linkedin"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-pinterest-p"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-rss"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-github"></i>
-                                </span>
-                            </a>
-                            <a href="#">
-                                <span class="social-icon">
-                                    <i class="fa fa-reddit-alien"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </div> --}}
 
     <!-- ======= Top Bar ======= -->
     @include('frontend._partials.top_bar')
@@ -135,9 +68,6 @@
 
 
     @yield('content')
-
-
-
 
 
     <!-- ======= Footer ======= -->
@@ -161,6 +91,16 @@
     <script src="{{ asset('necessary_assets/js/custom.js') }}"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @if (Session::has('message'))
+        <script>
+            var message = {!! json_encode(Session::get('message')) !!};
+            toastr.success(message, {
+                timeOut: 5000
+            });
+        </script>
+    @endif
 
     @yield('custom_js')
 </body>

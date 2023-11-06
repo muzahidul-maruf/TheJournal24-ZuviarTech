@@ -20,20 +20,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="news-style-two pt-3">
-                        {{-- <h3 class="news-title">
-                            <span>দেশজুড়ে</span>
-                        </h3> --}}
                         <div class="row feature">
                             @foreach ($international_news as $key => $item)
                                 @if ($key == 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
-                                            {{-- <div class="post-thumbnail">
-                                                <a href="{{ route('news-details', $item->slug) }}">
-                                                    <img class="img-fluid" src="{{ asset($item->image) }}"
-                                                        alt="post-thumbnail" style="height: 180px;" />
-                                                </a>
-                                            </div> --}}
                                             <div class="post-content">
                                                 <h2 class="post-title mt-3">
                                                     <a
@@ -67,6 +58,11 @@
 
                         </div>
                     </div>
+                    <nav aria-label="Page navigation pagination-wrapper" class="pagination-wrapper">
+                        <div class="pagination justify-content-center">
+                            {!! $international_news->links() !!}
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -124,7 +120,7 @@
                                 <span>সর্বাধিক পঠিত</span>
                             </h3>
                             <div class="post-list-block">
-                                @foreach ($international_news as $item)
+                                @foreach ($most_readed_news as $item)
                                     <div class="post-block-wrapper post-float ">
                                         <div class="post-content">
                                             <h2 class="post-title title-sm">
