@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
-@section('others_news_menu_active', 'active')
+@section('motamot_news_menu_active', 'active')
 @section('page_title')
-    | অন্যান্য
+    | মতামত
 @endsection
 
 @section('custom_css')
@@ -12,18 +12,19 @@
 @endsection
 
 @section('content')
+
+
+
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="news-style-two pt-3">
-
                         <div class="row feature">
-                            @foreach ($others_news as $key => $item)
+                            @foreach ($motamot_news as $key => $item)
                                 @if ($key == 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
-
                                             <div class="post-content">
                                                 <h2 class="post-title mt-3">
                                                     <a
@@ -34,7 +35,7 @@
                                     </div>
                                 @endif
                             @endforeach
-                            @foreach ($others_news as $key => $item)
+                            @foreach ($motamot_news as $key => $item)
                                 @if ($key > 0)
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="post-block-wrapper clearfix">
@@ -59,7 +60,7 @@
                     </div>
                     <nav aria-label="Page navigation pagination-wrapper" class="pagination-wrapper">
                         <div class="pagination justify-content-center">
-                            {!! $others_news->links() !!}
+                            {!! $motamot_news->links() !!}
                         </div>
                     </nav>
                 </div>
@@ -75,7 +76,7 @@
 
                 <div class="col-lg-9">
                     <div class="post-list-block">
-                        @foreach ($others_news as $key => $item)
+                        @foreach ($motamot_news as $key => $item)
                             @if ($key > 0)
                                 <div class="post-block-wrapper post-float clearfix">
                                     <div class="post-content">
