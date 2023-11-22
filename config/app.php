@@ -169,6 +169,7 @@ return [
          * Package Service Providers...
          */
         S1K3\Bangla\Date\BanglaDateServiceProvider::class,
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -193,7 +194,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'Share' => Jorenvh\Share\ShareFacade::class,
     ])->toArray(),
 
 ];
