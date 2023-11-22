@@ -31,6 +31,7 @@ class MasterController extends Controller
 
     public function newsDetails($slug)
     {
+
         $news_details = News::where('slug', $slug)->first();
         $news_details->read_count = $news_details->read_count + 1;
         $news_details->save();
@@ -41,7 +42,18 @@ class MasterController extends Controller
 
         $most_readed_news = News::orderBy('read_count', 'desc')->take(6)->get();
 
-        return view('frontend.pages.news-details', compact(['news_details', 'related_news', 'most_readed_news', 'feedbacks', 'feedbacks_count']));
+        $shareComponent = \Share::page(
+            url('news/'.$slug),
+            $news_details->title,
+        )
+            ->facebook()
+            ->twitter()
+            ->linkedin()
+            ->telegram()
+            ->whatsapp()
+            ->reddit();
+
+        return view('frontend.pages.news-details', compact(['news_details', 'related_news', 'most_readed_news', 'feedbacks', 'feedbacks_count', 'shareComponent']));
     }
     public function international_news()
     {
@@ -50,7 +62,7 @@ class MasterController extends Controller
         $sub_cat_news = Subcategory::whereHas('news')->with(['news'])->where('category_id', 2)->get();
         // return $sub_cat_news;
         $most_readed_news = News::orderBy('read_count', 'desc')->take(6)->get();
-        return view('frontend.pages.international_news', compact(['international_news', 'most_readed_news','sub_cat_news']));
+        return view('frontend.pages.international_news', compact(['international_news', 'most_readed_news', 'sub_cat_news']));
     }
     public function sports_news()
     {
