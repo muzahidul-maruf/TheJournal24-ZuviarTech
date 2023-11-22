@@ -6,7 +6,16 @@
 
 @section('custom_css')
     <style>
+        #social-links ul {
+            margin: 0;
+            padding-left: 0;
+            display: flex;
+            list-style-type: none;
+        }
 
+        #social-links ul li {
+            margin-right: 5px;
+        }
     </style>
 
 @endsection
@@ -92,26 +101,28 @@
 
                 <div class="col-lg-3">
                     <div class="row py-4">
-                        <h5>বাংলাদেশ</h5>
+                        <h5 class="mr-2">বাংলাদেশ</h5>
                         <p class="mb-1">দ্যা জার্নাল রিপোর্ট</p>
                         {{-- <p class="">রোববার সেপ্টেম্বর ১৭, ২০২৩</p> --}}
-                        <p class="">
+                        {{-- <p class="">
                             <span class="share-count">
                                 ১৪ বার শেয়ার <i class="fa-solid fa-share"></i>
                             </span>
-                        </p>
-                        <p>
-                        <ul class="list-inline footer-social">
-                            <li class="li list-inline-item"><a href="javascript:void(0)"><i
+                        </p> --}}
+                        {{-- {!! $shareComponent !!} --}}
+
+                        <div class="list-inline footer-social">
+                            {{-- <li class="li list-inline-item"><a href="javascript:void(0)"><i
                                         class="fa-brands fa-facebook"></i></a>
                             </li>
                             <li class="li list-inline-item"><a href="javascript:void(0)"><i
                                         class="fa-brands fa-twitter"></i></a></li>
                             <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a>
                             </li>
-                            <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                        </ul>
-                        </p>
+                            <li class="li list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li> --}}
+                            {!! $shareComponent !!}
+                        </div>
+
                     </div>
                     <div class="sidebar">
                         <div class="widget">
