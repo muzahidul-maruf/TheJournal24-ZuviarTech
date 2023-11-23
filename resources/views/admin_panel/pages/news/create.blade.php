@@ -52,7 +52,7 @@
                                     <div class="form-group col-md-3">
                                         <label for="subcategory_id">Sub Category<span class="text-danger">*</span></label>
                                         <select class="form-control select2bs4 dynamic_subcat" style="width: 100%;"
-                                            name="subcategory_id" id="subcategory_id" required>
+                                            name="subcategory_id" id="subcategory_id">
                                         </select>
                                     </div>
 
