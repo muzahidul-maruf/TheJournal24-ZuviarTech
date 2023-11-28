@@ -12,9 +12,9 @@
     <meta name="theme-name" content="newsbit" />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{{ asset('common/Favicon.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('common/Favicon.jpg') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('common/Favicon.jpg') }}">
 
     <!-- THEME CSS
  ================================================== -->
